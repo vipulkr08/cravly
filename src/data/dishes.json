@@ -1,0 +1,761 @@
+{
+    "veg": {
+        "breakfast": {
+            "order": [
+                {
+                    "id": "v-b-o-1",
+                    "name": "Masala Dosa",
+                    "image": "https://images.unsplash.com/photo-1668236543090-82bbe35b5b8c?w=600&h=400&fit=crop",
+                    "description": "Crispy rice crepe with spiced potato filling, served with sambar & chutneys",
+                    "why": "A Bengaluru breakfast classic! MTR or Vidyarthi Bhavan style perfection.",
+                    "restaurants": [
+                        "Vidyarthi Bhavan",
+                        "CTR",
+                        "MTR"
+                    ],
+                    "searchTerm": "masala dosa near me",
+                    "time": "20 mins",
+                    "calories": "350 kcal",
+                    "spiceLevel": "Medium",
+                    "price": "₹80-120"
+                },
+                {
+                    "id": "v-b-o-2",
+                    "name": "Idli Vada Combo",
+                    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&h=400&fit=crop",
+                    "description": "Fluffy steamed rice cakes with crispy lentil fritters & filter coffee",
+                    "why": "The perfect South Indian start to your day. Soft meets crunchy!",
+                    "restaurants": [
+                        "Brahmins Coffee Bar",
+                        "Veena Stores"
+                    ],
+                    "searchTerm": "idli vada combo"
+                },
+                {
+                    "id": "v-b-o-3",
+                    "name": "Poori Bhaji",
+                    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop",
+                    "description": "Puffy fried bread with spicy potato curry",
+                    "why": "When you need something more filling to power through the morning!",
+                    "restaurants": [
+                        "Asha Tiffins",
+                        "Udupi Park"
+                    ],
+                    "searchTerm": "poori bhaji bengaluru"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "v-b-c-1",
+                    "name": "Upma",
+                    "image": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=600&h=400&fit=crop",
+                    "description": "Savory semolina porridge tempered with mustard seeds & curry leaves",
+                    "why": "Quick, healthy, and ready in 15 minutes. Perfect busy morning food!",
+                    "searchTerm": "upma recipe"
+                },
+                {
+                    "id": "v-b-c-2",
+                    "name": "Poha",
+                    "image": "https://images.unsplash.com/photo-1613292443284-8d10ef9383fe?w=600&h=400&fit=crop",
+                    "description": "Flattened rice with peanuts, onions & a squeeze of lime",
+                    "why": "Light yet satisfying! A 10-minute breakfast that never disappoints.",
+                    "searchTerm": "poha recipe easy"
+                },
+                {
+                    "id": "v-b-c-3",
+                    "name": "Rava Dosa",
+                    "image": "https://images.unsplash.com/photo-1648475893318-2c4e28cc6eae?w=600&h=400&fit=crop",
+                    "description": "Crispy semolina crepe with onions & green chilies",
+                    "why": "No fermentation needed! Instant dosa for instant satisfaction.",
+                    "searchTerm": "rava dosa recipe instant"
+                }
+            ]
+        },
+        "lunch": {
+            "order": [
+                {
+                    "id": "v-l-o-1",
+                    "name": "South Indian Thali",
+                    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&h=400&fit=crop",
+                    "description": "Complete meal with rice, sambar, rasam, kootu, poriyal & payasam",
+                    "why": "A balanced feast on a plate! MTR or Nagarjuna style unlimited thali.",
+                    "restaurants": [
+                        "Nagarjuna",
+                        "MTR",
+                        "Vidyarthi Bhavan"
+                    ],
+                    "searchTerm": "south indian thali near me"
+                },
+                {
+                    "id": "v-l-o-2",
+                    "name": "Bisibele Bath",
+                    "image": "https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=600&h=400&fit=crop",
+                    "description": "Karnataka's signature spiced rice & lentil dish with vegetables",
+                    "why": "THE Bengaluru comfort food. Rich, spicy, and absolutely divine!",
+                    "restaurants": [
+                        "MTR",
+                        "Veena Stores"
+                    ],
+                    "searchTerm": "bisibele bath bengaluru"
+                },
+                {
+                    "id": "v-l-o-3",
+                    "name": "Curd Rice",
+                    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop",
+                    "description": "Cooling yogurt rice tempered with mustard & curry leaves",
+                    "why": "It's hot outside! Cool down with this South Indian comfort classic.",
+                    "restaurants": [
+                        "Rameshwaram Cafe",
+                        "Brahmins"
+                    ],
+                    "searchTerm": "curd rice thali"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "v-l-c-1",
+                    "name": "Dal Khichdi",
+                    "image": "https://images.unsplash.com/photo-1596560548464-f010549b84d7?w=600&h=400&fit=crop",
+                    "description": "One-pot rice & lentil comfort meal with ghee",
+                    "why": "Simple, nourishing, and ready in 30 minutes. Add papad for crunch!",
+                    "searchTerm": "dal khichdi recipe easy"
+                },
+                {
+                    "id": "v-l-c-2",
+                    "name": "Jeera Rice & Dal Fry",
+                    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&h=400&fit=crop",
+                    "description": "Cumin-tempered rice with smoky toor dal",
+                    "why": "A tried-and-tested combo that just works. Home cooking at its best!",
+                    "searchTerm": "dal fry jeera rice recipe"
+                },
+                {
+                    "id": "v-l-c-3",
+                    "name": "Vegetable Pulao",
+                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
+                    "description": "Fragrant rice with mixed vegetables & whole spices",
+                    "why": "One pot, many flavors. Perfect when you want variety without effort!",
+                    "searchTerm": "veg pulao recipe"
+                }
+            ]
+        },
+        "snacks": {
+            "order": [
+                {
+                    "id": "v-s-o-1",
+                    "name": "Gobi Manchurian",
+                    "image": "https://images.unsplash.com/photo-1626074560800-4e8e5eebc6fa?w=600&h=400&fit=crop",
+                    "description": "Crispy cauliflower in tangy Indo-Chinese sauce",
+                    "why": "That perfect 5 PM craving hit! Street food vibes, restaurant taste.",
+                    "searchTerm": "gobi manchurian near me"
+                },
+                {
+                    "id": "v-s-o-2",
+                    "name": "Pani Puri",
+                    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop",
+                    "description": "Crispy puris filled with spiced water, chickpeas & chutneys",
+                    "why": "Nothing beats the burst of flavors! VV Puram style!",
+                    "searchTerm": "pani puri chaat near me"
+                },
+                {
+                    "id": "v-s-o-3",
+                    "name": "Masala Pav",
+                    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop",
+                    "description": "Buttery bread roll with spicy mashed vegetables",
+                    "why": "Mumbai street food that Bengaluru loves! Quick, filling, delicious.",
+                    "searchTerm": "masala pav near me"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "v-s-c-1",
+                    "name": "Maggi Noodles",
+                    "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&h=400&fit=crop",
+                    "description": "Classic 2-minute noodles with extra veggies",
+                    "why": "The ultimate Indian snack! Add cheese for extra happiness.",
+                    "searchTerm": "maggi noodles recipe variations"
+                },
+                {
+                    "id": "v-s-c-2",
+                    "name": "Bread Pakora",
+                    "image": "https://images.unsplash.com/photo-1631788012782-57c197954db9?w=600&h=400&fit=crop",
+                    "description": "Bread slices dipped in spiced gram flour batter & fried",
+                    "why": "Rainy day essential! Crispy outside, soft inside.",
+                    "searchTerm": "bread pakora recipe"
+                },
+                {
+                    "id": "v-s-c-3",
+                    "name": "Aloo Tikki",
+                    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop",
+                    "description": "Crispy spiced potato patties with chutneys",
+                    "why": "Budget-friendly, tasty, and surprisingly easy to make!",
+                    "searchTerm": "aloo tikki recipe crispy"
+                }
+            ]
+        },
+        "dinner": {
+            "order": [
+                {
+                    "id": "v-d-o-1",
+                    "name": "Paneer Butter Masala",
+                    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=400&fit=crop",
+                    "description": "Cottage cheese in rich, creamy tomato gravy with naan",
+                    "why": "The king of North Indian curries! Creamy, indulgent, perfect.",
+                    "restaurants": [
+                        "Empire",
+                        "Truffles",
+                        "Kapoor's Cafe"
+                    ],
+                    "searchTerm": "paneer butter masala naan",
+                    "time": "25 mins",
+                    "calories": "450 kcal",
+                    "spiceLevel": "Mild",
+                    "price": "₹220-300"
+                },
+                {
+                    "id": "v-d-o-2",
+                    "name": "Veg Biryani",
+                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
+                    "description": "Fragrant basmati rice layered with spiced vegetables",
+                    "why": "When you want biryani feels without the meat. Equally satisfying!",
+                    "restaurants": [
+                        "Meghana Foods",
+                        "Nagarjuna"
+                    ],
+                    "searchTerm": "veg biryani near me"
+                },
+                {
+                    "id": "v-d-o-3",
+                    "name": "Palak Paneer with Roti",
+                    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop",
+                    "description": "Cottage cheese in creamy spinach gravy",
+                    "why": "Iron-rich and delicious! Your body will thank you.",
+                    "restaurants": [
+                        "Kapoor's Cafe",
+                        "Kota Kachori"
+                    ],
+                    "searchTerm": "palak paneer roti"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "v-d-c-1",
+                    "name": "Aloo Paratha",
+                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
+                    "description": "Stuffed potato flatbread with curd & pickle",
+                    "why": "Comfort food that feels like a warm hug. Mom's recipe vibes!",
+                    "searchTerm": "aloo paratha recipe punjabi"
+                },
+                {
+                    "id": "v-d-c-2",
+                    "name": "Kadhi Chawal",
+                    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&h=400&fit=crop",
+                    "description": "Tangy yogurt curry with pakodas over rice",
+                    "why": "Sour, spicy, soupy goodness. Perfect for a cozy night in!",
+                    "searchTerm": "kadhi chawal recipe"
+                },
+                {
+                    "id": "v-d-c-3",
+                    "name": "Chole Bhature",
+                    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop",
+                    "description": "Spiced chickpea curry with fluffy fried bread",
+                    "why": "Worth the effort! Weekend dinner project that delivers.",
+                    "searchTerm": "chole bhature recipe"
+                }
+            ]
+        },
+        "late-night": {
+            "order": [
+                {
+                    "id": "v-ln-o-1",
+                    "name": "Cheese Pizza",
+                    "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&h=400&fit=crop",
+                    "description": "Classic margherita or loaded cheese pizza",
+                    "why": "Late night cravings call for cheesy solutions. No judgment here!",
+                    "searchTerm": "cheese pizza delivery"
+                },
+                {
+                    "id": "v-ln-o-2",
+                    "name": "Loaded Fries",
+                    "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&h=400&fit=crop",
+                    "description": "Crispy fries topped with cheese, jalapeños & sauces",
+                    "why": "Salty, crispy, cheesy - exactly what 1 AM needs!",
+                    "searchTerm": "loaded fries near me"
+                },
+                {
+                    "id": "v-ln-o-3",
+                    "name": "Veg Frankie Roll",
+                    "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop",
+                    "description": "Wrap filled with spiced veggies & chutneys",
+                    "why": "Quick, portable, and hits the spot. Street food redemption!",
+                    "searchTerm": "veg frankie roll near me"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "v-ln-c-1",
+                    "name": "Maggi",
+                    "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&h=400&fit=crop",
+                    "description": "The OG 2-minute noodles - plain or with veggies",
+                    "why": "2 AM hunger? Maggi to the rescue. A timeless solution!",
+                    "searchTerm": "maggi recipe"
+                },
+                {
+                    "id": "v-ln-c-2",
+                    "name": "Cheese Toast",
+                    "image": "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=600&h=400&fit=crop",
+                    "description": "Buttery toast with melted cheese & herbs",
+                    "why": "Minimal effort, maximum satisfaction. 5 minutes to happiness!",
+                    "searchTerm": "cheese toast recipe"
+                },
+                {
+                    "id": "v-ln-c-3",
+                    "name": "Instant Fried Rice",
+                    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop",
+                    "description": "Quick stir-fried rice with whatever veggies you have",
+                    "why": "Leftover rice + soy sauce + veggies = midnight magic!",
+                    "searchTerm": "quick fried rice recipe"
+                }
+            ]
+        }
+    },
+    "non-veg": {
+        "breakfast": {
+            "order": [
+                {
+                    "id": "nv-b-o-1",
+                    "name": "Chicken Kheema Dosa",
+                    "image": "https://images.unsplash.com/photo-1668236543090-82bbe35b5b8c?w=600&h=400&fit=crop",
+                    "description": "Crispy dosa filled with spiced minced chicken",
+                    "why": "A Bengaluru specialty! Protein-packed start to your day.",
+                    "searchTerm": "chicken kheema dosa bengaluru"
+                },
+                {
+                    "id": "nv-b-o-2",
+                    "name": "Chicken Sandwich",
+                    "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&h=400&fit=crop",
+                    "description": "Grilled chicken with mayo, lettuce & cheese",
+                    "why": "Quick cafe-style breakfast! Filling and delicious.",
+                    "searchTerm": "chicken sandwich near me"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "nv-b-c-1",
+                    "name": "Chicken Paratha",
+                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
+                    "description": "Stuffed flatbread with spiced chicken keema",
+                    "why": "Weekend breakfast project! Worth the extra effort.",
+                    "searchTerm": "chicken paratha recipe"
+                }
+            ]
+        },
+        "lunch": {
+            "order": [
+                {
+                    "id": "nv-l-o-1",
+                    "name": "Ambur Biryani",
+                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
+                    "description": "Aromatic basmati rice with tender spiced chicken",
+                    "why": "THE biryani of South India! Lighter, spicier, absolutely divine.",
+                    "searchTerm": "ambur biryani bengaluru"
+                },
+                {
+                    "id": "nv-l-o-2",
+                    "name": "Butter Chicken with Naan",
+                    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
+                    "description": "Tender chicken in creamy tomato gravy with fresh naan",
+                    "why": "When you need that rich, indulgent lunch. Pure comfort!",
+                    "searchTerm": "butter chicken naan"
+                },
+                {
+                    "id": "nv-l-o-3",
+                    "name": "Fish Curry Rice",
+                    "image": "https://images.unsplash.com/photo-1626776876729-bab4369a5a5a?w=600&h=400&fit=crop",
+                    "description": "Tangy fish curry with steamed rice",
+                    "why": "Coastal Karnataka flavors! Light yet satisfying.",
+                    "searchTerm": "fish curry rice bengaluru"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "nv-l-c-1",
+                    "name": "Chicken Curry Rice",
+                    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
+                    "description": "Simple home-style chicken curry with steamed rice",
+                    "why": "The ultimate comfort meal. Mom's recipe never fails!",
+                    "searchTerm": "simple chicken curry recipe"
+                },
+                {
+                    "id": "nv-l-c-2",
+                    "name": "Chicken Fried Rice",
+                    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop",
+                    "description": "Indo-Chinese style rice with chicken & veggies",
+                    "why": "Leftover rice? Add chicken and make it special!",
+                    "searchTerm": "chicken fried rice recipe"
+                }
+            ]
+        },
+        "snacks": {
+            "order": [
+                {
+                    "id": "nv-s-o-1",
+                    "name": "Chicken 65",
+                    "image": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=600&h=400&fit=crop",
+                    "description": "Crispy spiced fried chicken - a Bengaluru invention!",
+                    "why": "Born right here in Bengaluru! Spicy, crispy, addictive.",
+                    "searchTerm": "chicken 65 near me"
+                },
+                {
+                    "id": "nv-s-o-2",
+                    "name": "Chilli Chicken",
+                    "image": "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&h=400&fit=crop",
+                    "description": "Indo-Chinese style chicken with peppers & onions",
+                    "why": "That perfect sweet-spicy-tangy combo. Can't eat just one!",
+                    "searchTerm": "chilli chicken near me"
+                },
+                {
+                    "id": "nv-s-o-3",
+                    "name": "Chicken Momos",
+                    "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&h=400&fit=crop",
+                    "description": "Steamed or fried dumplings with spicy chutney",
+                    "why": "Indiranagar street food vibes! Hot, juicy, perfect.",
+                    "searchTerm": "chicken momos near me"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "nv-s-c-1",
+                    "name": "Chicken Nuggets",
+                    "image": "https://images.unsplash.com/photo-1562967914-608f82629710?w=600&h=400&fit=crop",
+                    "description": "Crispy breaded chicken bites with dipping sauce",
+                    "why": "Kids and adults alike! Air fryer makes it healthy-ish.",
+                    "searchTerm": "homemade chicken nuggets recipe"
+                },
+                {
+                    "id": "nv-s-c-2",
+                    "name": "Chicken Sandwich",
+                    "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&h=400&fit=crop",
+                    "description": "Leftover chicken turned into a gourmet sandwich",
+                    "why": "Quick assembly, gourmet result. Use that leftover chicken!",
+                    "searchTerm": "chicken sandwich recipe easy"
+                }
+            ]
+        },
+        "dinner": {
+            "order": [
+                {
+                    "id": "nv-d-o-1",
+                    "name": "Mutton Biryani",
+                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
+                    "description": "Slow-cooked mutton with fragrant basmati rice",
+                    "why": "The ultimate dinner indulgence! Worth every calorie.",
+                    "searchTerm": "mutton biryani near me"
+                },
+                {
+                    "id": "nv-d-o-2",
+                    "name": "Pepper Chicken",
+                    "image": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=600&h=400&fit=crop",
+                    "description": "South Indian dry chicken with crushed black pepper",
+                    "why": "Spicy, aromatic, uniquely South Indian. A flavor explosion!",
+                    "searchTerm": "pepper chicken bengaluru"
+                },
+                {
+                    "id": "nv-d-o-3",
+                    "name": "Tandoori Chicken",
+                    "image": "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&h=400&fit=crop",
+                    "description": "Charred, smoky, marinated chicken with mint chutney",
+                    "why": "That smoky, charred goodness! Restaurant quality delivered.",
+                    "searchTerm": "tandoori chicken near me"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "nv-d-c-1",
+                    "name": "Butter Chicken",
+                    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
+                    "description": "Creamy tomato chicken curry - restaurant style at home",
+                    "why": "Impress yourself! Easier than you think to make at home.",
+                    "searchTerm": "butter chicken recipe easy"
+                },
+                {
+                    "id": "nv-d-c-2",
+                    "name": "Keema Pav",
+                    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop",
+                    "description": "Spiced minced meat with buttery bread rolls",
+                    "why": "One-pot wonder! Make once, eat twice.",
+                    "searchTerm": "keema pav recipe"
+                },
+                {
+                    "id": "nv-d-c-3",
+                    "name": "Chicken Stir Fry",
+                    "image": "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&h=400&fit=crop",
+                    "description": "Quick Indo-Chinese chicken with vegetables",
+                    "why": "15 minutes, one pan, tons of flavor. Weeknight winner!",
+                    "searchTerm": "chicken stir fry recipe"
+                }
+            ]
+        },
+        "late-night": {
+            "order": [
+                {
+                    "id": "nv-ln-o-1",
+                    "name": "Chicken Shawarma",
+                    "image": "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&h=400&fit=crop",
+                    "description": "Spiced chicken wrapped with garlic sauce & pickles",
+                    "why": "The ultimate late-night street food! Quick, filling, delicious.",
+                    "searchTerm": "chicken shawarma near me"
+                },
+                {
+                    "id": "nv-ln-o-2",
+                    "name": "Chicken Roll",
+                    "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop",
+                    "description": "Kati roll with spiced chicken, onions & chutney",
+                    "why": "Kolkata street food that works any time! Portable & tasty.",
+                    "searchTerm": "chicken roll near me"
+                },
+                {
+                    "id": "nv-ln-o-3",
+                    "name": "Chicken Burger",
+                    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop",
+                    "description": "Juicy chicken patty with all the fixings",
+                    "why": "Sometimes you just need a burger. No explanation required!",
+                    "searchTerm": "chicken burger delivery"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "nv-ln-c-1",
+                    "name": "Chicken Maggi",
+                    "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&h=400&fit=crop",
+                    "description": "Maggi noodles upgraded with shredded chicken",
+                    "why": "Maggi, but make it protein! Leftover chicken works perfectly.",
+                    "searchTerm": "chicken maggi recipe"
+                },
+                {
+                    "id": "nv-ln-c-2",
+                    "name": "Chicken Sandwich",
+                    "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&h=400&fit=crop",
+                    "description": "Mayo, cheese, leftover chicken - ultimate midnight snack",
+                    "why": "Fridge raid champion! 5 minutes to satisfaction.",
+                    "searchTerm": "quick chicken sandwich recipe"
+                }
+            ]
+        }
+    },
+    "egg": {
+        "breakfast": {
+            "order": [
+                {
+                    "id": "e-b-o-1",
+                    "name": "Egg Dosa",
+                    "image": "https://images.unsplash.com/photo-1668236543090-82bbe35b5b8c?w=600&h=400&fit=crop",
+                    "description": "Crispy dosa topped with a runny egg",
+                    "why": "South Indian meets protein! Quick, satisfying, delicious.",
+                    "searchTerm": "egg dosa near me"
+                },
+                {
+                    "id": "e-b-o-2",
+                    "name": "Bread Omelette",
+                    "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop",
+                    "description": "Fluffy omelette sandwiched in buttered bread",
+                    "why": "Street food classic! Simple, filling, always hits right.",
+                    "searchTerm": "bread omelette near me"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "e-b-c-1",
+                    "name": "Egg Bhurji",
+                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
+                    "description": "Spiced scrambled eggs with onions & tomatoes",
+                    "why": "The Indian scramble! Ready in 10 minutes, tastes amazing.",
+                    "searchTerm": "egg bhurji recipe"
+                },
+                {
+                    "id": "e-b-c-2",
+                    "name": "Boiled Eggs with Toast",
+                    "image": "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=600&h=400&fit=crop",
+                    "description": "Perfect boiled eggs with buttered toast soldiers",
+                    "why": "Classic for a reason! Healthy, quick, satisfying.",
+                    "searchTerm": "perfect boiled eggs"
+                },
+                {
+                    "id": "e-b-c-3",
+                    "name": "Anda Paratha",
+                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
+                    "description": "Paratha with egg cooked right on top",
+                    "why": "Dhaba style breakfast at home! Filling and flavorful.",
+                    "searchTerm": "anda paratha recipe"
+                }
+            ]
+        },
+        "lunch": {
+            "order": [
+                {
+                    "id": "e-l-o-1",
+                    "name": "Egg Biryani",
+                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
+                    "description": "Fragrant rice with spiced boiled eggs",
+                    "why": "Budget biryani that doesn't compromise on flavor!",
+                    "searchTerm": "egg biryani near me"
+                },
+                {
+                    "id": "e-l-o-2",
+                    "name": "Egg Curry Rice",
+                    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&h=400&fit=crop",
+                    "description": "Boiled eggs in spicy curry with steamed rice",
+                    "why": "Comfort food at its finest! Homey, hearty, satisfying.",
+                    "searchTerm": "egg curry rice"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "e-l-c-1",
+                    "name": "Egg Fried Rice",
+                    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop",
+                    "description": "Wok-tossed rice with scrambled eggs & veggies",
+                    "why": "Leftover rice + eggs = 15 minute lunch magic!",
+                    "searchTerm": "egg fried rice recipe"
+                },
+                {
+                    "id": "e-l-c-2",
+                    "name": "Egg Curry",
+                    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
+                    "description": "Boiled eggs in rich onion-tomato gravy",
+                    "why": "Simple, nutritious, and goes with everything. Make extra!",
+                    "searchTerm": "egg curry recipe easy"
+                }
+            ]
+        },
+        "snacks": {
+            "order": [
+                {
+                    "id": "e-s-o-1",
+                    "name": "Egg Puff",
+                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
+                    "description": "Flaky pastry filled with spiced egg masala",
+                    "why": "Bakery classic! Perfect with cutting chai.",
+                    "searchTerm": "egg puff near me"
+                },
+                {
+                    "id": "e-s-o-2",
+                    "name": "Egg Roll",
+                    "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop",
+                    "description": "Egg paratha wrapped with onions & chutney",
+                    "why": "Street food that fills you up! Quick, tasty, portable.",
+                    "searchTerm": "egg roll near me"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "e-s-c-1",
+                    "name": "Egg Bhurji Pav",
+                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
+                    "description": "Spiced scrambled eggs in buttery bread rolls",
+                    "why": "Mumbai-style snack, ready in minutes! Pure comfort.",
+                    "searchTerm": "egg bhurji pav recipe"
+                },
+                {
+                    "id": "e-s-c-2",
+                    "name": "Deviled Eggs",
+                    "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop",
+                    "description": "Stuffed eggs with creamy spiced yolk filling",
+                    "why": "Fancy looking, easy making! Great for guests too.",
+                    "searchTerm": "deviled eggs recipe indian"
+                }
+            ]
+        },
+        "dinner": {
+            "order": [
+                {
+                    "id": "e-d-o-1",
+                    "name": "Egg Curry with Paratha",
+                    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&h=400&fit=crop",
+                    "description": "Spicy egg curry with flaky layered bread",
+                    "why": "Dhaba vibes at home! Rich, filling, satisfying.",
+                    "searchTerm": "egg curry paratha"
+                },
+                {
+                    "id": "e-d-o-2",
+                    "name": "Egg Biryani",
+                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
+                    "description": "Layered rice with masala eggs and raita",
+                    "why": "All the biryani joy without breaking the bank!",
+                    "searchTerm": "egg biryani near me"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "e-d-c-1",
+                    "name": "Shakshuka",
+                    "image": "https://images.unsplash.com/photo-1590412200988-a436970781fa?w=600&h=400&fit=crop",
+                    "description": "Eggs poached in spiced tomato-pepper sauce",
+                    "why": "Mediterranean meets Indian! One pan, tons of flavor.",
+                    "searchTerm": "shakshuka recipe"
+                },
+                {
+                    "id": "e-d-c-2",
+                    "name": "Egg Masala",
+                    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
+                    "description": "Boiled eggs in thick onion gravy with chapati",
+                    "why": "Classic comfort food! Make the gravy, add eggs, done.",
+                    "searchTerm": "egg masala recipe"
+                },
+                {
+                    "id": "e-d-c-3",
+                    "name": "Omelette Rice",
+                    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop",
+                    "description": "Japanese-style omurice with ketchup rice",
+                    "why": "Fun to make, delicious to eat! Kids love this too.",
+                    "searchTerm": "omurice recipe easy"
+                }
+            ]
+        },
+        "late-night": {
+            "order": [
+                {
+                    "id": "e-ln-o-1",
+                    "name": "Egg Roll",
+                    "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop",
+                    "description": "Quick egg paratha roll with toppings",
+                    "why": "Late night hunger solved! Quick, cheap, filling.",
+                    "searchTerm": "egg roll near me"
+                },
+                {
+                    "id": "e-ln-o-2",
+                    "name": "Egg Fried Rice",
+                    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop",
+                    "description": "Indo-Chinese style egg rice from the corner shop",
+                    "why": "When only fried rice will do. Classic midnight choice!",
+                    "searchTerm": "egg fried rice near me"
+                }
+            ],
+            "cook": [
+                {
+                    "id": "e-ln-c-1",
+                    "name": "Egg Maggi",
+                    "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&h=400&fit=crop",
+                    "description": "Maggi topped with a perfectly cooked egg",
+                    "why": "The ultimate hostel combination! Quick and satisfying.",
+                    "searchTerm": "egg maggi recipe"
+                },
+                {
+                    "id": "e-ln-c-2",
+                    "name": "French Toast",
+                    "image": "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=600&h=400&fit=crop",
+                    "description": "Eggy bread, pan-fried with cinnamon & sugar",
+                    "why": "Sweet or savory, you decide! 5 minute comfort food.",
+                    "searchTerm": "french toast recipe"
+                },
+                {
+                    "id": "e-ln-c-3",
+                    "name": "Egg Sandwich",
+                    "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&h=400&fit=crop",
+                    "description": "Fried or scrambled egg between bread slices",
+                    "why": "Simple but perfect. Sometimes that's all you need!",
+                    "searchTerm": "egg sandwich recipe"
+                }
+            ]
+        }
+    }
+}
