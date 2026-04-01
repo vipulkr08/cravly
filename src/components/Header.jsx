@@ -1,14 +1,24 @@
 import React from 'react';
 
-function Header() {
+function Header({ onSurpriseMe, theme, toggleTheme }) {
     return (
-        <div className="app-branding">
-            <h1 className="brand-logo">
-                <span className="brand-text-orange">Khao</span>
-                <span className="brand-text-white">Pi</span>
-            </h1>
-            <p className="brand-tagline">No thinking. Just eating.</p>
-        </div>
+        <header className="minimal-header">
+          <div className="header-inner">
+            <h1 className="logo-text">Cravely</h1>
+            <div className="header-actions">
+              <button 
+                className="theme-toggle" 
+                onClick={toggleTheme} 
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? '☀️' : '🌙'}
+              </button>
+              <button className="btn-surprise" onClick={onSurpriseMe}>
+                Surprise Me
+              </button>
+            </div>
+          </div>
+        </header>
     );
 }
 

@@ -1,5 +1,5 @@
 /**
- * Recommendation Engine for KhaoPi
+ * Recommendation Engine for Cravely
  * Provides single dish recommendations based on diet, mode, and time
  */
 

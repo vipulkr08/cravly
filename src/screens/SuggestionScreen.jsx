@@ -1,142 +1,93 @@
-import { useState, useEffect } from 'react';
-import { getMealTimeDisplay } from '../utils/timeUtils';
-import { getSwiggyUrl, getZomatoUrl, getYouTubeUrl } from '../utils/recommendationEngine';
+import React from 'react';
+import { getSwiggyUrl, getYouTubeUrl } from '../utils/recommendationEngine';
 
-function SuggestionScreen({ dish, mode, onBack, onShuffle, onModeChange }) {
-    const [isFlipping, setIsFlipping] = useState(false);
-
-    // Reset flipping state when dish changes
-    useEffect(() => {
-        setIsFlipping(false);
-    }, [dish]);
-
-    const handleShuffleClick = () => {
-        setIsFlipping(true);
-        onShuffle();
-    };
-
+function SuggestionScreen({ dish, suggestions, mode, onBack, onShuffle, onSelect }) {
+    
     const handlePrimaryAction = () => {
-        if (mode === 'order') {
-            window.open(getSwiggyUrl(dish.searchTerm), '_blank', 'noopener,noreferrer');
-        } else {
-            window.open(getYouTubeUrl(dish.searchTerm), '_blank', 'noopener,noreferrer');
-        }
+        const url = mode === 'order' ? getSwiggyUrl(dish.searchTerm) : getYouTubeUrl(dish.searchTerm);
+        window.open(url, '_blank', 'noopener,noreferrer');
     };
 
-    if (!dish) {
-        return (
-            <div className="result-screen error-screen" style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <div className="glass-content-card" style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 48, marginBottom: 16 }}>🙈</div>
-                    <h2 style={{ color: 'white', marginBottom: 8 }}>Empty Plate!</h2>
-                    <p style={{ color: '#aaa', marginBottom: 24 }}>
-                        We couldn't find a perfect match for this combo.
-                    </p>
-                    <button className="primary-action-btn" onClick={onBack} style={{ width: '100%', justifyContent: 'center' }}>
-                        Try Something Else
-                    </button>
-                </div>
-            </div>
-        );
-    }
+    if (!dish) return null;
 
     return (
-        <div className="result-screen">
-            {/* Bleed Background Image */}
-            <div className="hero-bleed-image">
-                <img src={dish.image} alt="" role="presentation" />
-                <div className="bleed-overlay"></div>
-            </div>
+        <div className="result-screen-minimal animate-in">
+            <main>
+                <span className="back-link" onClick={onBack}>
+                    ← Back to Preferences
+                </span>
 
-            {/* Content Layer */}
-            <div className={`result-content ${isFlipping ? 'flipping' : ''}`}>
-
-                {/* Floating "Why" Badge - Now on the image */}
-                <div className="floating-badge">
-                    <span className="badge-icon">✨</span>
-                    <span className="badge-text">{dish.why}</span>
-                </div>
-
-                {/* Back Navigation */}
-                <button className="back-nav-btn" onClick={onBack}>
-                    ← Back
-                </button>
-
-                {/* Main Glass Card */}
-                <div className="glass-content-card">
-                    <div className="card-header">
-                        <span className={`diet-tag ${dish.dietType}`}>{dish.dietType}</span>
-                        {dish.price && <span className="price-tag">{dish.price}</span>}
+                <div className="dish-card-minimal">
+                    <span className="dish-label-minimal">{mode === 'order' ? 'Featured Selection' : 'Editor\'s Choice'}</span>
+                    <h1 className="dish-title-minimal">
+                        <span className={`diet-indicator ${dish.id.startsWith('v') ? 'veg' : dish.id.startsWith('nv') ? 'non-veg' : 'egg'}`}></span>
+                        {dish.name}
+                    </h1>
+                    
+                    <div className="dish-reason-block">
+                        "Chef's Note: {dish.why}"
                     </div>
 
-                    <h1 className="dish-title">{dish.name}</h1>
-                    <p className="dish-description">{dish.description}</p>
+                    <p className="dish-desc-minimal">
+                        {dish.description}
+                    </p>
 
-                    {/* Decision Engine Stats */}
-                    <div className="quick-stats">
-                        <div className="stat-item">
-                            <span className="stat-icon">⏱️</span>
-                            <span className="stat-text">{dish.time || '20 mins'}</span>
+                    <div className="dish-stats-minimal">
+                        <div className="stat-item-minimal">
+                            PREPARATION
+                            <span>{dish.time || '20 mins'}</span>
                         </div>
-                        <div className="stat-item">
-                            <span className="stat-icon">🔥</span>
-                            <span className="stat-text">{dish.calories || '350 kcal'}</span>
+                        <div className="stat-item-minimal">
+                            ENERGY
+                            <span>{dish.calories || '450 kcal'}</span>
                         </div>
-                        <div className="stat-item">
-                            <span className="stat-icon">🌶️</span>
-                            <span className="stat-text">{dish.spiceLevel || 'Medium'}</span>
+                        <div className="stat-item-minimal">
+                            SPICE
+                            <span>{dish.spiceLevel || 'Medium'}</span>
                         </div>
                     </div>
 
-                    <div className="divider-line"></div>
-
-                    {/* Contextual & Trending */}
-                    {dish.restaurants && (
-                        <div className="trending-section">
-                            <p className="trending-label">� Trending in Indiranagar & Koramangala</p>
-                            <div className="best-places-row">
-                                {dish.restaurants.slice(0, 3).map((place, i) => (
-                                    <span key={i} className="place-pill">{place}</span>
-                                ))}
-                            </div>
-                        </div>
-                    )}
+                    <div className="action-row">
+                        <button className="btn-secondary-simple" onClick={handlePrimaryAction}>
+                            {mode === 'order' ? 'Find on Swiggy' : 'Recipe on YouTube'}
+                        </button>
+                        <button className="shuffle-minimal" onClick={onShuffle} title="Try another match">
+                            🎲
+                        </button>
+                    </div>
                 </div>
 
-                {/* Unified Action Tray */}
-                <div className="action-tray">
-                    <button className="primary-action-btn" onClick={handlePrimaryAction}>
-                        <span>{mode === 'order' ? 'Order on Swiggy' : 'Watch Recipe'}</span>
-                        <span className="action-arrow">→</span>
-                    </button>
-
-                    <button className="shuffle-fab" onClick={handleShuffleClick} aria-label="Shuffle">
-                        <span className="shuffle-icon">🎲</span>
-                    </button>
-                </div>
-
-                {/* Alternates Panel - Only if we have more suggestions */}
-                {dish && suggestions && suggestions.length > 1 && (
-                    <div className="alternates-panel">
-                        <p className="alternates-label">More Cravings</p>
-                        <div className="alternates-list">
+                {/* Alternates Panel - Text Only */}
+                {suggestions && suggestions.length > 1 && (
+                    <div style={{ marginTop: '40px' }}>
+                        <h3 style={{ fontSize: '14px', fontWeight: '800', marginBottom: '16px', color: '#888' }}>OTHER SUGGESTIONS</h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                             {suggestions.slice(1).map((item, index) => (
-                                <div
-                                    key={item.id}
-                                    className="alternate-card"
-                                    onClick={() => onSelect && onSelect(index + 1)}
+                                <div 
+                                    key={item.id} 
+                                    onClick={() => onSelect(index + 1)}
+                                    style={{ 
+                                        padding: '12px', 
+                                        border: '1px solid #E9ECEF', 
+                                        borderRadius: '4px', 
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center'
+                                    }}
                                 >
-                                    <img src={item.image} alt={item.name} className="alt-img" />
-                                    <div className="alt-info">
-                                        <span className="alt-name">{item.name}</span>
-                                        <span className="alt-time">{item.time || '20m'}</span>
-                                    </div>
+                                    <span style={{ fontSize: '13px', fontWeight: '700' }}>{item.name}</span>
+                                    <span style={{ fontSize: '11px', color: '#888' }}>{item.time || '15m'}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
                 )}
-            </div>
+            </main>
+
+            <footer className="minimal-footer">
+                <p className="footer-text">© 2026 Cravely. Purely functional discovery.</p>
+            </footer>
         </div>
     );
 }

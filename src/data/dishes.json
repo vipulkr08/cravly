@@ -2,759 +2,195 @@
     "veg": {
         "breakfast": {
             "order": [
-                {
-                    "id": "v-b-o-1",
-                    "name": "Masala Dosa",
-                    "image": "https://images.unsplash.com/photo-1668236543090-82bbe35b5b8c?w=600&h=400&fit=crop",
-                    "description": "Crispy rice crepe with spiced potato filling, served with sambar & chutneys",
-                    "why": "A Bengaluru breakfast classic! MTR or Vidyarthi Bhavan style perfection.",
-                    "restaurants": [
-                        "Vidyarthi Bhavan",
-                        "CTR",
-                        "MTR"
-                    ],
-                    "searchTerm": "masala dosa near me",
-                    "time": "20 mins",
-                    "calories": "350 kcal",
-                    "spiceLevel": "Medium",
-                    "price": "₹80-120"
-                },
-                {
-                    "id": "v-b-o-2",
-                    "name": "Idli Vada Combo",
-                    "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&h=400&fit=crop",
-                    "description": "Fluffy steamed rice cakes with crispy lentil fritters & filter coffee",
-                    "why": "The perfect South Indian start to your day. Soft meets crunchy!",
-                    "restaurants": [
-                        "Brahmins Coffee Bar",
-                        "Veena Stores"
-                    ],
-                    "searchTerm": "idli vada combo"
-                },
-                {
-                    "id": "v-b-o-3",
-                    "name": "Poori Bhaji",
-                    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop",
-                    "description": "Puffy fried bread with spicy potato curry",
-                    "why": "When you need something more filling to power through the morning!",
-                    "restaurants": [
-                        "Asha Tiffins",
-                        "Udupi Park"
-                    ],
-                    "searchTerm": "poori bhaji bengaluru"
-                }
+                { "id": "v-b-o-1", "name": "Masala Dosa", "description": "Crispy rice crepe with spiced potato filling", "why": "The quintessential South Indian breakfast. Legendary in Bengaluru.", "time": "20m", "calories": "350 kcal", "spiceLevel": "Medium", "searchTerm": "masala dosa" },
+                { "id": "v-b-o-2", "name": "Idli Vada Combo", "description": "Steamed rice cakes and crispy lentil fritters", "why": "Soft meets crunchy. The most balanced way to start your day.", "time": "15m", "calories": "280 kcal", "spiceLevel": "Mild", "searchTerm": "idli vada" },
+                { "id": "v-b-o-3", "name": "Poori Bhaji", "description": "Fluffy fried bread with spicy potato curry", "why": "Indulgent and filling. Perfect for a slow morning.", "time": "25m", "calories": "450 kcal", "spiceLevel": "Medium", "searchTerm": "poori bhaji" },
+                { "id": "v-b-o-4", "name": "Poha", "description": "Flattened rice with peanuts and onions", "why": "Light and citrusy. A Maharashtrian classic.", "time": "10m", "calories": "220 kcal", "spiceLevel": "Medium", "searchTerm": "poha" },
+                { "id": "v-b-o-5", "name": "Sabudana Khichdi", "description": "Sago pearls with crushed peanuts and cumin", "why": "Chewy and satisfying. A favorite for fasting and mornings.", "time": "20m", "calories": "310 kcal", "spiceLevel": "Mild", "searchTerm": "sabudana khichdi" },
+                { "id": "v-b-o-6", "name": "Rava Idli", "description": "Semolina steamed cakes with cashews", "why": "Textural and savory. Invented in Bengaluru by MTR!", "time": "15m", "calories": "250 kcal", "spiceLevel": "Mild", "searchTerm": "rava idli" },
+                { "id": "v-b-o-7", "name": "Uttapam", "description": "Thick rice pancake with onion and tomato toppings", "why": "Healthy and vibrant. Great for sharing.", "time": "20m", "calories": "300 kcal", "spiceLevel": "Medium", "searchTerm": "uttapam" },
+                { "id": "v-b-o-8", "name": "Appam with Stew", "description": "Fermented rice pancake with coconut milk stew", "why": "Creamy and elegant. A Kerala morning dream.", "time": "30m", "calories": "320 kcal", "spiceLevel": "Mild", "searchTerm": "appam stew" },
+                { "id": "v-b-o-9", "name": "Ven Pongal", "description": "Ghee-rich rice and lentil porridge", "why": "Peppery and comforting. The ultimate South Indian fuel.", "time": "20m", "calories": "380 kcal", "spiceLevel": "Medium", "searchTerm": "pongal" },
+                { "id": "v-b-o-10", "name": "Aloo Paratha", "description": "Stuffed potato flatbread with curd", "why": "North Indian power breakfast. A hug on a plate.", "time": "25m", "calories": "420 kcal", "spiceLevel": "Medium", "searchTerm": "aloo paratha" }
             ],
             "cook": [
-                {
-                    "id": "v-b-c-1",
-                    "name": "Upma",
-                    "image": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=600&h=400&fit=crop",
-                    "description": "Savory semolina porridge tempered with mustard seeds & curry leaves",
-                    "why": "Quick, healthy, and ready in 15 minutes. Perfect busy morning food!",
-                    "searchTerm": "upma recipe"
-                },
-                {
-                    "id": "v-b-c-2",
-                    "name": "Poha",
-                    "image": "https://images.unsplash.com/photo-1613292443284-8d10ef9383fe?w=600&h=400&fit=crop",
-                    "description": "Flattened rice with peanuts, onions & a squeeze of lime",
-                    "why": "Light yet satisfying! A 10-minute breakfast that never disappoints.",
-                    "searchTerm": "poha recipe easy"
-                },
-                {
-                    "id": "v-b-c-3",
-                    "name": "Rava Dosa",
-                    "image": "https://images.unsplash.com/photo-1648475893318-2c4e28cc6eae?w=600&h=400&fit=crop",
-                    "description": "Crispy semolina crepe with onions & green chilies",
-                    "why": "No fermentation needed! Instant dosa for instant satisfaction.",
-                    "searchTerm": "rava dosa recipe instant"
-                }
+                { "id": "v-b-c-1", "name": "Poha", "description": "Quick flattened rice with turmeric and curry leaves", "why": "10 minutes to flavor. Hard to mess up!", "time": "10m", "calories": "210 kcal", "spiceLevel": "Medium", "searchTerm": "poha recipe" },
+                { "id": "v-b-c-2", "name": "Upma", "description": "Savory semolina porridge with veggies", "why": "Healthy and fast. A weekday champion.", "time": "15m", "calories": "240 kcal", "spiceLevel": "Mild", "searchTerm": "upma recipe" },
+                { "id": "v-b-c-3", "name": "Rava Dosa", "description": "Instant crispy semolina crepe", "why": "No fermentation needed. Instant satisfaction.", "time": "15m", "calories": "280 kcal", "spiceLevel": "Medium", "searchTerm": "rava dosa recipe" },
+                { "id": "v-b-c-4", "name": "Bread Upma", "description": "Cubes of toasted bread in a spicy tempering", "why": "Leftover bread? Make it amazing in 5 minutes.", "time": "10m", "calories": "260 kcal", "spiceLevel": "Medium", "searchTerm": "bread upma recipe" },
+                { "id": "v-b-c-5", "name": "Besan Cheela", "description": "Gram flour protein pancakes", "why": "Vegan, high-protein, and ready in 15 minutes.", "time": "15m", "calories": "180 kcal", "spiceLevel": "Medium", "searchTerm": "besan cheela recipe" },
+                { "id": "v-b-c-6", "name": "Oats with Honey", "description": "Creamy oats with fresh fruits", "why": "The healthy minimalist's choice.", "time": "5m", "calories": "150 kcal", "spiceLevel": "None", "searchTerm": "healthy oats recipe" },
+                { "id": "v-b-c-7", "name": "Aloo Sandwich", "description": "Grilled bread with spiced potato filling", "why": "Simple comfort. Perfect with a cup of tea.", "time": "15m", "calories": "320 kcal", "spiceLevel": "Medium", "searchTerm": "aloo sandwich recipe" },
+                { "id": "v-b-c-8", "name": "Vermicelli Upma", "description": "Roasted semolina noodles with veggies", "why": "Light and springy. A fun breakfast texture.", "time": "15m", "calories": "230 kcal", "spiceLevel": "Mild", "searchTerm": "vermicelli upma recipe" },
+                { "id": "v-b-c-9", "name": "Adai Dosa", "description": "Multi-lentil healthy crepes", "why": "Fiber-rich and dense. Keeps you full for hours.", "time": "20m", "calories": "310 kcal", "spiceLevel": "Medium", "searchTerm": "adai dosa recipe" },
+                { "id": "v-b-c-10", "name": "Fruit Bowl", "description": "Assorted seasonal fruit platter", "why": "Fresh, raw, and vibrant energy source.", "time": "5m", "calories": "120 kcal", "spiceLevel": "None", "searchTerm": "fruit platter ideas" }
             ]
         },
         "lunch": {
             "order": [
-                {
-                    "id": "v-l-o-1",
-                    "name": "South Indian Thali",
-                    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&h=400&fit=crop",
-                    "description": "Complete meal with rice, sambar, rasam, kootu, poriyal & payasam",
-                    "why": "A balanced feast on a plate! MTR or Nagarjuna style unlimited thali.",
-                    "restaurants": [
-                        "Nagarjuna",
-                        "MTR",
-                        "Vidyarthi Bhavan"
-                    ],
-                    "searchTerm": "south indian thali near me"
-                },
-                {
-                    "id": "v-l-o-2",
-                    "name": "Bisibele Bath",
-                    "image": "https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=600&h=400&fit=crop",
-                    "description": "Karnataka's signature spiced rice & lentil dish with vegetables",
-                    "why": "THE Bengaluru comfort food. Rich, spicy, and absolutely divine!",
-                    "restaurants": [
-                        "MTR",
-                        "Veena Stores"
-                    ],
-                    "searchTerm": "bisibele bath bengaluru"
-                },
-                {
-                    "id": "v-l-o-3",
-                    "name": "Curd Rice",
-                    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop",
-                    "description": "Cooling yogurt rice tempered with mustard & curry leaves",
-                    "why": "It's hot outside! Cool down with this South Indian comfort classic.",
-                    "restaurants": [
-                        "Rameshwaram Cafe",
-                        "Brahmins"
-                    ],
-                    "searchTerm": "curd rice thali"
-                }
+                { "id": "v-l-o-1", "name": "South Indian Thali", "description": "Assorted regional curries with rice and bread", "why": "The complete culinary experience in one sitting.", "time": "40m", "calories": "650 kcal", "spiceLevel": "Medium", "searchTerm": "thali near me" },
+                { "id": "v-l-o-2", "name": "Bisibele Bath", "description": "Spiced rice and lentil mash with veggies", "why": "Karnataka's signature comfort food. Pure soul.", "time": "20m", "calories": "420 kcal", "spiceLevel": "Medium", "searchTerm": "bisibile bath" },
+                { "id": "v-l-o-3", "name": "Paneer Sizzler", "description": "Grilled paneer with buttery rice and steamed vegetables", "why": "Indulgent and texturally complex. A weekday luxury.", "time": "30m", "calories": "550 kcal", "spiceLevel": "Medium", "searchTerm": "paneer sizzler" },
+                { "id": "v-l-o-4", "name": "Veg Fried Rice", "description": "Wok-tossed rice with crunchy vegetables", "why": "Quick, reliable, and savory. A classic Indo-Chinese choice.", "time": "20m", "calories": "480 kcal", "spiceLevel": "Medium", "searchTerm": "veg fried rice" },
+                { "id": "v-l-o-5", "name": "Paneer Tikka Roll", "description": "Grilled cottage cheese in a soft wrap", "why": "Portable protein. Great for a busy workday.", "time": "15m", "calories": "380 kcal", "spiceLevel": "Medium", "searchTerm": "paneer roll" },
+                { "id": "v-l-o-6", "name": "Chole Bhature", "description": "Spiced chickpeas with fluffy deep-fried bread", "why": "Indulgent street food that defines lazy lunches.", "time": "30m", "calories": "700 kcal", "spiceLevel": "High", "searchTerm": "chole bhature" },
+                { "id": "v-l-o-7", "name": "Pesto Pasta", "description": "Fettuccine in a rich basil and pine nut sauce", "why": "Vibrant and aromatic. A lighter gourmet lunch.", "time": "25m", "calories": "520 kcal", "spiceLevel": "None", "searchTerm": "pesto pasta" },
+                { "id": "v-l-o-8", "name": "Vada Pav", "description": "Spiced potato fritter in a soft bun", "why": "Mumbai's favorite. The perfect high-energy snack-lunch.", "time": "10m", "calories": "300 kcal", "spiceLevel": "High", "searchTerm": "vada pav" },
+                { "id": "v-l-o-9", "name": "Curd Rice", "description": "Tempered yogurt rice with mustard seeds", "why": "Cooling and digestive. The best end to any meal.", "time": "10m", "calories": "280 kcal", "spiceLevel": "Mild", "searchTerm": "curd rice" },
+                { "id": "v-l-o-10", "name": "Mushroom Risotto", "description": "Creamy arborio rice with assorted mushrooms", "why": "Earthy and sophisticated. The ultimate slow lunch.", "time": "40m", "calories": "580 kcal", "spiceLevel": "Mild", "searchTerm": "mushroom risotto" }
             ],
             "cook": [
-                {
-                    "id": "v-l-c-1",
-                    "name": "Dal Khichdi",
-                    "image": "https://images.unsplash.com/photo-1596560548464-f010549b84d7?w=600&h=400&fit=crop",
-                    "description": "One-pot rice & lentil comfort meal with ghee",
-                    "why": "Simple, nourishing, and ready in 30 minutes. Add papad for crunch!",
-                    "searchTerm": "dal khichdi recipe easy"
-                },
-                {
-                    "id": "v-l-c-2",
-                    "name": "Jeera Rice & Dal Fry",
-                    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&h=400&fit=crop",
-                    "description": "Cumin-tempered rice with smoky toor dal",
-                    "why": "A tried-and-tested combo that just works. Home cooking at its best!",
-                    "searchTerm": "dal fry jeera rice recipe"
-                },
-                {
-                    "id": "v-l-c-3",
-                    "name": "Vegetable Pulao",
-                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
-                    "description": "Fragrant rice with mixed vegetables & whole spices",
-                    "why": "One pot, many flavors. Perfect when you want variety without effort!",
-                    "searchTerm": "veg pulao recipe"
-                }
+                { "id": "v-l-c-1", "name": "Dal Khichdi", "description": "One-pot nourishing rice and lentils", "why": "The ultimate home-cooked comfort. Use extra ghee!", "time": "25m", "calories": "320 kcal", "spiceLevel": "Mild", "searchTerm": "dal khichdi recipe" },
+                { "id": "v-l-c-2", "name": "Jeera Rice & Dal", "description": "Cumin rice with yellow lentil tempering", "why": "Simple, efficient, and never fails to satisfy.", "time": "20m", "calories": "280 kcal", "spiceLevel": "Medium", "searchTerm": "dal tadka recipe" },
+                { "id": "v-l-c-3", "name": "Lemon Rice", "description": "Zesty rice with peanuts and chilies", "why": "Bright and cheery. A 10-minute wonder.", "time": "15m", "calories": "260 kcal", "spiceLevel": "Medium", "searchTerm": "lemon rice recipe" },
+                { "id": "v-l-c-4", "name": "Veg Pulav", "description": "Mildly spiced rice with mix vegetables", "why": "Everything in one cooker. Zero cleanup.", "time": "30m", "calories": "310 kcal", "spiceLevel": "Medium", "searchTerm": "veg pulav recipe" },
+                { "id": "v-l-c-5", "name": "Paneer Bhurji", "description": "Spiced scrambled cottage cheese", "why": "High protein and rapid. Pairs perfectly with roti.", "time": "15m", "calories": "350 kcal", "spiceLevel": "Medium", "searchTerm": "paneer bhurji recipe" },
+                { "id": "v-l-c-6", "name": "Aloo Gobhi", "description": "Classic stir-fry of potato and cauliflower", "why": "The humble hero of North Indian home cooking.", "time": "25m", "calories": "220 kcal", "spiceLevel": "Medium", "searchTerm": "aloo gobhi recipe" },
+                { "id": "v-l-c-7", "name": "Pasta Arrabbiata", "description": "Penne in a spicy tomato and garlic sauce", "why": "Bold and fast. Use fresh basil for extra kick.", "time": "20m", "calories": "420 kcal", "spiceLevel": "High", "searchTerm": "pasta arrabbiata recipe" },
+                { "id": "v-l-c-8", "name": "Curd Rice", "description": "Yogurt rice with tadka", "why": "Lazy yet therapeutic. Best for hot afternoons.", "time": "10m", "calories": "250 kcal", "spiceLevel": "Mild", "searchTerm": "curd rice recipe" },
+                { "id": "v-l-c-9", "name": "Mix Vegetable Fry", "description": "Assorted veggies tossed with spices", "why": "Clean out the fridge! Healthy and colorful.", "time": "20m", "calories": "180 kcal", "spiceLevel": "Medium", "searchTerm": "mix veg fry recipe" },
+                { "id": "v-l-c-10", "name": "Sambar Rice", "description": "Rice cooked with lentils and veggies", "why": "Tangy and hearty. A mini feast in one bowl.", "time": "30m", "calories": "340 kcal", "spiceLevel": "Medium", "searchTerm": "sambar rice recipe" }
             ]
         },
         "snacks": {
             "order": [
-                {
-                    "id": "v-s-o-1",
-                    "name": "Gobi Manchurian",
-                    "image": "https://images.unsplash.com/photo-1626074560800-4e8e5eebc6fa?w=600&h=400&fit=crop",
-                    "description": "Crispy cauliflower in tangy Indo-Chinese sauce",
-                    "why": "That perfect 5 PM craving hit! Street food vibes, restaurant taste.",
-                    "searchTerm": "gobi manchurian near me"
-                },
-                {
-                    "id": "v-s-o-2",
-                    "name": "Pani Puri",
-                    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop",
-                    "description": "Crispy puris filled with spiced water, chickpeas & chutneys",
-                    "why": "Nothing beats the burst of flavors! VV Puram style!",
-                    "searchTerm": "pani puri chaat near me"
-                },
-                {
-                    "id": "v-s-o-3",
-                    "name": "Masala Pav",
-                    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop",
-                    "description": "Buttery bread roll with spicy mashed vegetables",
-                    "why": "Mumbai street food that Bengaluru loves! Quick, filling, delicious.",
-                    "searchTerm": "masala pav near me"
-                }
+                { "id": "v-s-o-1", "name": "Gobi Manchurian", "description": "Crispy cauliflower in tangy sauce", "why": "The snack that defines Bengaluru street food.", "time": "20m", "calories": "400 kcal", "spiceLevel": "High", "searchTerm": "gobi manchurian" },
+                { "id": "v-s-o-2", "name": "Pani Puri", "description": "Hollow crisps with spiced water and sprouts", "why": "The burst of life every afternoon needs.", "time": "10m", "calories": "150 kcal", "spiceLevel": "High", "searchTerm": "pani puri" },
+                { "id": "v-s-o-3", "name": "Onion Pakora", "description": "Crunchy onion fritters", "why": "Best enjoyed with rain and a cup of tea.", "time": "15m", "calories": "320 kcal", "spiceLevel": "Medium", "searchTerm": "onion pakora" },
+                { "id": "v-s-o-4", "name": "Pav Bhaji", "description": "Spiced vegetable mash with buttery bread", "why": "Street food royalty. Rich and deeply satisfying.", "time": "25m", "calories": "580 kcal", "spiceLevel": "Medium", "searchTerm": "pav bhaji" },
+                { "id": "v-s-o-5", "name": "Bhel Puri", "description": "Puffed rice with spicy and tangy chutneys", "why": "Light, crunchy, and a total flavor explosion.", "time": "10m", "calories": "180 kcal", "spiceLevel": "Medium", "searchTerm": "bhel puri" },
+                { "id": "v-s-o-6", "name": "Samosa", "description": "Crispy pastry with spiced potato filling", "why": "The legendary Indian snack. Solid and reliable.", "time": "15m", "calories": "250 kcal", "spiceLevel": "Medium", "searchTerm": "samosa" },
+                { "id": "v-s-o-7", "name": "Spring Rolls", "description": "Crispy veg-filled rolls with sweet chili sauce", "why": "A delightful crunch with an Asian twist.", "time": "20m", "calories": "310 kcal", "spiceLevel": "Mild", "searchTerm": "veg spring rolls" },
+                { "id": "v-s-o-8", "name": "Cheese Sandwich", "description": "Grilled bread with oodles of cheese", "why": "When in doubt, add cheese. Best during tea-time.", "time": "15m", "calories": "380 kcal", "spiceLevel": "None", "searchTerm": "grilled cheese sandwich" },
+                { "id": "v-s-o-9", "name": "Corn Bhel", "description": "Sweet corn with veggies and lime", "why": "Juicy and refreshing. A healthier snack option.", "time": "10m", "calories": "160 kcal", "spiceLevel": "Mild", "searchTerm": "corn bhel" },
+                { "id": "v-s-o-10", "name": "Aloo Tikki Chaat", "description": "Potato patties with yogurt and chutneys", "why": "Tangy, sweet, and spicy - all at once.", "time": "15m", "calories": "340 kcal", "spiceLevel": "Medium", "searchTerm": "aloo tikki chaat" }
             ],
             "cook": [
-                {
-                    "id": "v-s-c-1",
-                    "name": "Maggi Noodles",
-                    "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&h=400&fit=crop",
-                    "description": "Classic 2-minute noodles with extra veggies",
-                    "why": "The ultimate Indian snack! Add cheese for extra happiness.",
-                    "searchTerm": "maggi noodles recipe variations"
-                },
-                {
-                    "id": "v-s-c-2",
-                    "name": "Bread Pakora",
-                    "image": "https://images.unsplash.com/photo-1631788012782-57c197954db9?w=600&h=400&fit=crop",
-                    "description": "Bread slices dipped in spiced gram flour batter & fried",
-                    "why": "Rainy day essential! Crispy outside, soft inside.",
-                    "searchTerm": "bread pakora recipe"
-                },
-                {
-                    "id": "v-s-c-3",
-                    "name": "Aloo Tikki",
-                    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop",
-                    "description": "Crispy spiced potato patties with chutneys",
-                    "why": "Budget-friendly, tasty, and surprisingly easy to make!",
-                    "searchTerm": "aloo tikki recipe crispy"
-                }
+                { "id": "v-s-c-1", "name": "Maggi", "description": "The 2-minute noodle icon", "why": "The snack of a generation. Add cheese for luxury.", "time": "5m", "calories": "300 kcal", "spiceLevel": "Medium", "searchTerm": "maggi recipe" },
+                { "id": "v-s-c-2", "name": "Bread Pakora", "description": "Stuffed bread fritters", "why": "Heavily satisfying with a hot cup of tea.", "time": "20m", "calories": "340 kcal", "spiceLevel": "Medium", "searchTerm": "bread pakora recipe" },
+                { "id": "v-s-c-3", "name": "Corn on the Cob", "description": "Roasted corn with salt and lime", "why": "Simple, rustic, and very healthy.", "time": "10m", "calories": "120 kcal", "spiceLevel": "Mild", "searchTerm": "roasted corn recipe" },
+                { "id": "v-s-c-4", "name": "Garlic Bread", "description": "Toasted bread with garlic butter and herbs", "why": "Aromatic and addictive. Ready in 10 minutes.", "time": "10m", "calories": "280 kcal", "spiceLevel": "None", "searchTerm": "garlic bread recipe" },
+                { "id": "v-s-c-5", "name": "Potato Wedges", "description": "Baked or fried seasoned potato slices", "why": "Universal crowd pleaser. Easy batch cooking.", "time": "25m", "calories": "240 kcal", "spiceLevel": "Medium", "searchTerm": "potato wedges recipe" },
+                { "id": "v-s-c-6", "name": "French Fries", "description": "Classic salted crispy potato sticks", "why": "Simple joy. Use the air fryer to keep it light.", "time": "15m", "calories": "220 kcal", "spiceLevel": "None", "searchTerm": "french fries recipe" },
+                { "id": "v-s-c-7", "name": "Bhel Puri", "description": "Instant puffed rice assembly", "why": "Zero cooking required. Just mix and eat.", "time": "10m", "calories": "170 kcal", "spiceLevel": "Medium", "searchTerm": "bhel puri recipe" },
+                { "id": "v-s-c-8", "name": "Paneer Tikka", "description": "Pan-seared spiced cottage cheese", "why": "High protein snack. Tastes like a restaurant at home.", "time": "20m", "calories": "320 kcal", "spiceLevel": "Medium", "searchTerm": "paneer tikka recipe" },
+                { "id": "v-s-c-9", "name": "Fruit Salad", "description": "A mix of your favorite fruits", "why": "Natural sugar hit. Refreshing and bright.", "time": "5m", "calories": "130 kcal", "spiceLevel": "None", "searchTerm": "fruit salad recipe" },
+                { "id": "v-s-c-10", "name": "Makhana Roast", "description": "Roasted lotus seeds with spices", "why": "The healthiest crunch you can find.", "time": "10m", "calories": "110 kcal", "spiceLevel": "Mild", "searchTerm": "roasted makhana recipe" }
             ]
         },
         "dinner": {
             "order": [
-                {
-                    "id": "v-d-o-1",
-                    "name": "Paneer Butter Masala",
-                    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=400&fit=crop",
-                    "description": "Cottage cheese in rich, creamy tomato gravy with naan",
-                    "why": "The king of North Indian curries! Creamy, indulgent, perfect.",
-                    "restaurants": [
-                        "Empire",
-                        "Truffles",
-                        "Kapoor's Cafe"
-                    ],
-                    "searchTerm": "paneer butter masala naan",
-                    "time": "25 mins",
-                    "calories": "450 kcal",
-                    "spiceLevel": "Mild",
-                    "price": "₹220-300"
-                },
-                {
-                    "id": "v-d-o-2",
-                    "name": "Veg Biryani",
-                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
-                    "description": "Fragrant basmati rice layered with spiced vegetables",
-                    "why": "When you want biryani feels without the meat. Equally satisfying!",
-                    "restaurants": [
-                        "Meghana Foods",
-                        "Nagarjuna"
-                    ],
-                    "searchTerm": "veg biryani near me"
-                },
-                {
-                    "id": "v-d-o-3",
-                    "name": "Palak Paneer with Roti",
-                    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop",
-                    "description": "Cottage cheese in creamy spinach gravy",
-                    "why": "Iron-rich and delicious! Your body will thank you.",
-                    "restaurants": [
-                        "Kapoor's Cafe",
-                        "Kota Kachori"
-                    ],
-                    "searchTerm": "palak paneer roti"
-                }
+                { "id": "v-d-o-1", "name": "Paneer Butter Masala", "description": "Rich and creamy cottage cheese curry", "why": "The king of North Indian comfort. Pair with Naan.", "time": "30m", "calories": "550 kcal", "spiceLevel": "Mild", "searchTerm": "paneer butter masala" },
+                { "id": "v-d-o-2", "name": "Veg Biryani", "description": "Aromatic rice with layered spiced veggies", "why": "A slow feast. The pride of Indian dinner tables.", "time": "40m", "calories": "620 kcal", "spiceLevel": "Medium", "searchTerm": "veg biryani" },
+                { "id": "v-d-o-3", "name": "Palak Paneer", "description": "Cottage cheese in creamy spinach gravy", "why": "Nutritious and decadent. Best with hot Rotis.", "time": "25m", "calories": "480 kcal", "spiceLevel": "Mild", "searchTerm": "palak paneer" },
+                { "id": "v-d-o-4", "name": "Dal Makhani", "description": "Slow-cooked buttery black lentils", "why": "The ultimate party dish. Richly satisfying.", "time": "40m", "calories": "520 kcal", "spiceLevel": "Mild", "searchTerm": "dal makhani" },
+                { "id": "v-d-o-5", "name": "Tawa Veg", "description": "Assorted veggies cooked on a flat griddle", "why": "Smoky and textured. Great for flavor hunters.", "time": "30m", "calories": "380 kcal", "spiceLevel": "Medium", "searchTerm": "tawa veg" },
+                { "id": "v-d-o-6", "name": "Malai Kofta", "description": "Potato and paneer balls in a silky gravy", "why": "The most luxurious vegetarian option.", "time": "35m", "calories": "600 kcal", "spiceLevel": "Mild", "searchTerm": "malai kofta" },
+                { "id": "v-d-o-7", "name": "Veg Kolhapuri", "description": "Extra spicy mixed vegetable curry", "why": "For when your evening needs a real heat hit.", "time": "30m", "calories": "420 kcal", "spiceLevel": "High", "searchTerm": "veg kolhapuri" },
+                { "id": "v-d-o-8", "name": "Kadai Paneer", "description": "Paneer cooked with bell peppers and whole spices", "why": "Bold and peppery. A textural masterpiece.", "time": "30m", "calories": "490 kcal", "spiceLevel": "High", "searchTerm": "kadai paneer" },
+                { "id": "v-d-o-9", "name": "Gobi Masala", "description": "Spiced cauliflower roast", "why": "Simple, hearty, and goes with everything.", "time": "25m", "calories": "310 kcal", "spiceLevel": "Medium", "searchTerm": "gobi masala" },
+                { "id": "v-d-o-10", "name": "Dum Aloo", "description": "Slow-cooked baby potatoes in rich gravy", "why": "A Kashmiri classic. Deeply aromatic.", "time": "35m", "calories": "450 kcal", "spiceLevel": "Medium", "searchTerm": "dum aloo" }
             ],
             "cook": [
-                {
-                    "id": "v-d-c-1",
-                    "name": "Aloo Paratha",
-                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
-                    "description": "Stuffed potato flatbread with curd & pickle",
-                    "why": "Comfort food that feels like a warm hug. Mom's recipe vibes!",
-                    "searchTerm": "aloo paratha recipe punjabi"
-                },
-                {
-                    "id": "v-d-c-2",
-                    "name": "Kadhi Chawal",
-                    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&h=400&fit=crop",
-                    "description": "Tangy yogurt curry with pakodas over rice",
-                    "why": "Sour, spicy, soupy goodness. Perfect for a cozy night in!",
-                    "searchTerm": "kadhi chawal recipe"
-                },
-                {
-                    "id": "v-d-c-3",
-                    "name": "Chole Bhature",
-                    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop",
-                    "description": "Spiced chickpea curry with fluffy fried bread",
-                    "why": "Worth the effort! Weekend dinner project that delivers.",
-                    "searchTerm": "chole bhature recipe"
-                }
+                { "id": "v-d-c-1", "name": "Aloo Paratha", "description": "Stuffed potato flatbread", "why": "Comfort from kitchen to plate. Best with curd.", "time": "30m", "calories": "380 kcal", "spiceLevel": "Medium", "searchTerm": "aloo paratha recipe" },
+                { "id": "v-d-c-2", "name": "Kadhi Chawal", "description": "Tangy yogurt curry with rice", "why": "A sour-spicy delight. The lazy dinner hero.", "time": "35m", "calories": "410 kcal", "spiceLevel": "Medium", "searchTerm": "kadhi chawal recipe" },
+                { "id": "v-d-c-3", "name": "Paneer Tikka Masala", "description": "Grilled paneer in a tomato-onion base", "why": "Restaurant vibes in your own kitchen.", "time": "35m", "calories": "450 kcal", "spiceLevel": "High", "searchTerm": "paneer tikka masala recipe" },
+                { "id": "v-d-c-4", "name": "Vegetable Stew", "description": "Veggies in a coconut milk broth", "why": "Light, healthy, and aromatic. Best with Appam.", "time": "25m", "calories": "280 kcal", "spiceLevel": "Mild", "searchTerm": "veg stew recipe" },
+                { "id": "v-d-c-5", "name": "Baingan Bharta", "description": "Smoky roasted eggplant mash", "why": "A rustic North Indian masterpiece. Deep flavor.", "time": "30m", "calories": "180 kcal", "spiceLevel": "Medium", "searchTerm": "baingan bharta recipe" },
+                { "id": "v-d-c-6", "name": "Gajar Matar", "description": "Winter specialty of carrots and peas", "why": "Sweet and peppery. High nutrition, high taste.", "time": "20m", "calories": "190 kcal", "spiceLevel": "Medium", "searchTerm": "gajar matar recipe" },
+                { "id": "v-d-c-7", "name": "Black Eyed Peas Curry", "description": "Protein-rich Lobia in a spicy gravy", "why": "The ultimate healthy dinner choice.", "time": "30m", "calories": "260 kcal", "spiceLevel": "Medium", "searchTerm": "lobia recipe" },
+                { "id": "v-d-c-8", "name": "Methi Matar Malai", "description": "Fenugreek and peas in cream", "why": "Sophisticated and earthy. A sweet-bitter balance.", "time": "25m", "calories": "380 kcal", "spiceLevel": "Mild", "searchTerm": "methi matar malai recipe" },
+                { "id": "v-d-c-9", "name": "Bhindi Masala", "description": "Dry stir-fry of okra with spices", "why": "Fast and fiber-rich. Pairs great with simple Dal.", "time": "20m", "calories": "210 kcal", "spiceLevel": "Medium", "searchTerm": "bhindi masala recipe" },
+                { "id": "v-d-c-10", "name": "Mushroom Masala", "description": "Earthy mushrooms in a spicy red base", "why": "For when Paneer feels too heavy. Umami rich.", "time": "25m", "calories": "240 kcal", "spiceLevel": "High", "searchTerm": "mushroom masala recipe" }
             ]
         },
         "late-night": {
             "order": [
-                {
-                    "id": "v-ln-o-1",
-                    "name": "Cheese Pizza",
-                    "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&h=400&fit=crop",
-                    "description": "Classic margherita or loaded cheese pizza",
-                    "why": "Late night cravings call for cheesy solutions. No judgment here!",
-                    "searchTerm": "cheese pizza delivery"
-                },
-                {
-                    "id": "v-ln-o-2",
-                    "name": "Loaded Fries",
-                    "image": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&h=400&fit=crop",
-                    "description": "Crispy fries topped with cheese, jalapeños & sauces",
-                    "why": "Salty, crispy, cheesy - exactly what 1 AM needs!",
-                    "searchTerm": "loaded fries near me"
-                },
-                {
-                    "id": "v-ln-o-3",
-                    "name": "Veg Frankie Roll",
-                    "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop",
-                    "description": "Wrap filled with spiced veggies & chutneys",
-                    "why": "Quick, portable, and hits the spot. Street food redemption!",
-                    "searchTerm": "veg frankie roll near me"
-                }
+                { "id": "v-ln-o-1", "name": "Cheese Pizza", "description": "Cheesy, saucy, and comforting", "why": "The global late-night champion.", "time": "30m", "calories": "580 kcal", "spiceLevel": "None", "searchTerm": "cheese pizza" },
+                { "id": "v-ln-o-2", "name": "Loaded Fries", "description": "Fries with cheese, jalapeños, and dips", "why": "Salty and satisfying. Exactly what 1 AM needs.", "time": "20m", "calories": "450 kcal", "spiceLevel": "Medium", "searchTerm": "loaded fries" },
+                { "id": "v-ln-o-3", "name": "Veg Frankie", "description": "Street-style vegetable wrap", "why": "Quick, portable, and packs a citrusy punch.", "time": "15m", "calories": "320 kcal", "spiceLevel": "High", "searchTerm": "veg frankie" },
+                { "id": "v-ln-o-4", "name": "Paneer Roll", "description": "Spiced cottage cheese in a paratha", "why": "Filling and savory. The midnight hunger killer.", "time": "15m", "calories": "410 kcal", "spiceLevel": "Medium", "searchTerm": "paneer roll" },
+                { "id": "v-ln-o-5", "name": "Garlic Bread", "description": "Cheesy bread with garlic dip", "why": "Perfect sidekick for a late-night show.", "time": "20m", "calories": "340 kcal", "spiceLevel": "None", "searchTerm": "garlic bread" },
+                { "id": "v-ln-o-6", "name": "Nachos", "description": "Crispy corn chips with salsa and cheese", "why": "The best crunch for late-night munchies.", "time": "15m", "calories": "520 kcal", "spiceLevel": "Medium", "searchTerm": "nachos" },
+                { "id": "v-ln-o-7", "name": "Veg Burger", "description": "Crispy patty with lettuce and mayo", "why": "Simple, solid, and reliable.", "time": "20m", "calories": "480 kcal", "spiceLevel": "Mild", "searchTerm": "veg burger" },
+                { "id": "v-ln-o-8", "name": "Pasta Alfredo", "description": "Creamy white sauce pasta", "why": "For when your midnight needs a hug.", "time": "25m", "calories": "610 kcal", "spiceLevel": "None", "searchTerm": "pasta alfredo" },
+                { "id": "v-ln-o-9", "name": "Gobi Manchurian", "description": "Indo-Chinese street style cauliflower", "why": "Because some cravings don't watch the clock.", "time": "20m", "calories": "380 kcal", "spiceLevel": "High", "searchTerm": "gobi manchurian" },
+                { "id": "v-ln-o-10", "name": "Milkshake", "description": "Thick chocolate or fruit shake", "why": "Sweet and soothing. A perfect midnight closer.", "time": "10m", "calories": "350 kcal", "spiceLevel": "None", "searchTerm": "chocolate milkshake" }
             ],
             "cook": [
-                {
-                    "id": "v-ln-c-1",
-                    "name": "Maggi",
-                    "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&h=400&fit=crop",
-                    "description": "The OG 2-minute noodles - plain or with veggies",
-                    "why": "2 AM hunger? Maggi to the rescue. A timeless solution!",
-                    "searchTerm": "maggi recipe"
-                },
-                {
-                    "id": "v-ln-c-2",
-                    "name": "Cheese Toast",
-                    "image": "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=600&h=400&fit=crop",
-                    "description": "Buttery toast with melted cheese & herbs",
-                    "why": "Minimal effort, maximum satisfaction. 5 minutes to happiness!",
-                    "searchTerm": "cheese toast recipe"
-                },
-                {
-                    "id": "v-ln-c-3",
-                    "name": "Instant Fried Rice",
-                    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop",
-                    "description": "Quick stir-fried rice with whatever veggies you have",
-                    "why": "Leftover rice + soy sauce + veggies = midnight magic!",
-                    "searchTerm": "quick fried rice recipe"
-                }
+                { "id": "v-ln-c-1", "name": "Maggi", "description": "The OG late-night hero", "why": "3 minutes to happiness. Add butter for extra love.", "time": "5m", "calories": "310 kcal", "spiceLevel": "Medium", "searchTerm": "maggi recipe" },
+                { "id": "v-ln-c-2", "name": "Cheese Toast", "description": "Buttery bread with melted cheese", "why": "Fastest way to silence a hungry stomach.", "time": "5m", "calories": "280 kcal", "spiceLevel": "None", "searchTerm": "cheese toast recipe" },
+                { "id": "v-ln-c-3", "name": "Scrambled Paneer", "description": "Quick toss of panner and spices", "why": "High protein midnight fix.", "time": "10m", "calories": "320 kcal", "spiceLevel": "Medium", "searchTerm": "paneer bhurji quick" },
+                { "id": "v-ln-c-4", "name": "Oatmeal Cookies", "description": "Healthy-ish store cupboard treat", "why": "Sweet and satisfying without much effort.", "time": "5m", "calories": "180 kcal", "spiceLevel": "None", "searchTerm": "oatmeal cookies" },
+                { "id": "v-ln-c-5", "name": "Peanut Butter Toast", "description": "Crunchy toast with creamy PB", "why": "Power through the late-night work.", "time": "2m", "calories": "250 kcal", "spiceLevel": "None", "searchTerm": "pb toast" },
+                { "id": "v-ln-c-6", "name": "Popcorn", "description": "Home-popped kernels with salt", "why": "The low-calorie midnight crunch.", "time": "5m", "calories": "110 kcal", "spiceLevel": "None", "searchTerm": "popcorn recipe" },
+                { "id": "v-ln-c-7", "name": "Banana Shake", "description": "Banana, milk, and honey blend", "why": "Fills you up fast and naturally.", "time": "5m", "calories": "220 kcal", "spiceLevel": "None", "searchTerm": "banana shake recipe" },
+                { "id": "v-ln-c-8", "name": "Bread and Jam", "description": "Timeless classic pairing", "why": "Zero logic, 100% nostalgia.", "time": "2m", "calories": "210 kcal", "spiceLevel": "None", "searchTerm": "plain bread jam" },
+                { "id": "v-ln-c-9", "name": "Aloo Fry", "description": "Rapid stir-fry of potatoes", "why": "Because potatoes are the answer to everything.", "time": "15m", "calories": "240 kcal", "spiceLevel": "Medium", "searchTerm": "aloo fry recipe" },
+                { "id": "v-ln-c-10", "name": "Warm Milk and Honey", "description": "The ultimate sleep-inducer", "why": "Calms the nerves and the stomach.", "time": "3m", "calories": "150 kcal", "spiceLevel": "None", "searchTerm": "warm milk recipe" }
             ]
         }
     },
     "non-veg": {
         "breakfast": {
             "order": [
-                {
-                    "id": "nv-b-o-1",
-                    "name": "Chicken Kheema Dosa",
-                    "image": "https://images.unsplash.com/photo-1668236543090-82bbe35b5b8c?w=600&h=400&fit=crop",
-                    "description": "Crispy dosa filled with spiced minced chicken",
-                    "why": "A Bengaluru specialty! Protein-packed start to your day.",
-                    "searchTerm": "chicken kheema dosa bengaluru"
-                },
-                {
-                    "id": "nv-b-o-2",
-                    "name": "Chicken Sandwich",
-                    "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&h=400&fit=crop",
-                    "description": "Grilled chicken with mayo, lettuce & cheese",
-                    "why": "Quick cafe-style breakfast! Filling and delicious.",
-                    "searchTerm": "chicken sandwich near me"
-                }
+                { "id": "nv-b-o-1", "name": "Chicken Kheema Dosa", "description": "Spiced minced chicken on a crispy dosa", "why": "A meaty twist on a Bengaluru classic. Power start.", "time": "25m", "calories": "480 kcal", "spiceLevel": "Medium", "searchTerm": "chicken kheema dosa" },
+                { "id": "nv-b-o-2", "name": "Chicken Sandwich", "description": "Grilled chicken breast with mayo and lettuce", "why": "Reliable protein source to fuel your morning.", "time": "15m", "calories": "420 kcal", "spiceLevel": "Mild", "searchTerm": "chicken sandwich" },
+                { "id": "nv-b-o-3", "name": "Sausage and Egg Wrap", "description": "Grilled sausages in a soft tortilla", "why": "A hearty, portable Western breakfast.", "time": "20m", "calories": "520 kcal", "spiceLevel": "Medium", "searchTerm": "sausage breakfast wrap" }
             ],
             "cook": [
-                {
-                    "id": "nv-b-c-1",
-                    "name": "Chicken Paratha",
-                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
-                    "description": "Stuffed flatbread with spiced chicken keema",
-                    "why": "Weekend breakfast project! Worth the extra effort.",
-                    "searchTerm": "chicken paratha recipe"
-                }
+                { "id": "nv-b-c-1", "name": "Chicken Kheema Paratha", "description": "Flatbread stuffed with spiced minced chicken", "why": "Weekend breakfast project. Worth the effort.", "time": "35m", "calories": "450 kcal", "spiceLevel": "High", "searchTerm": "chicken paratha recipe" },
+                { "id": "nv-b-c-2", "name": "Chicken Omelette", "description": "Chicken chunks folded into fluffy eggs", "why": "A double protein hit to start your day.", "time": "15m", "calories": "380 kcal", "spiceLevel": "Medium", "searchTerm": "chicken omelette recipe" }
             ]
         },
         "lunch": {
             "order": [
-                {
-                    "id": "nv-l-o-1",
-                    "name": "Ambur Biryani",
-                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
-                    "description": "Aromatic basmati rice with tender spiced chicken",
-                    "why": "THE biryani of South India! Lighter, spicier, absolutely divine.",
-                    "searchTerm": "ambur biryani bengaluru"
-                },
-                {
-                    "id": "nv-l-o-2",
-                    "name": "Butter Chicken with Naan",
-                    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
-                    "description": "Tender chicken in creamy tomato gravy with fresh naan",
-                    "why": "When you need that rich, indulgent lunch. Pure comfort!",
-                    "searchTerm": "butter chicken naan"
-                },
-                {
-                    "id": "nv-l-o-3",
-                    "name": "Fish Curry Rice",
-                    "image": "https://images.unsplash.com/photo-1626776876729-bab4369a5a5a?w=600&h=400&fit=crop",
-                    "description": "Tangy fish curry with steamed rice",
-                    "why": "Coastal Karnataka flavors! Light yet satisfying.",
-                    "searchTerm": "fish curry rice bengaluru"
-                }
+                { "id": "nv-l-o-1", "name": "Chicken Biryani", "description": "Fragrant basmati rice with spiced chicken", "why": "The undisputed king of Indian lunches.", "time": "40m", "calories": "680 kcal", "spiceLevel": "High", "searchTerm": "chicken biryani" },
+                { "id": "nv-l-o-2", "name": "Butter Chicken Naan", "description": "Creamy tomato chicken with soft flatbread", "why": "The ultimate indulgent lunch experience.", "time": "30m", "calories": "720 kcal", "spiceLevel": "Mild", "searchTerm": "butter chicken" },
+                { "id": "nv-l-o-3", "name": "Fish Curry & Rice", "description": "Tangy coastal fish curry with steamed rice", "why": "Light relative to meat, but heavy on flavor.", "time": "25m", "calories": "450 kcal", "spiceLevel": "High", "searchTerm": "fish curry" },
+                { "id": "nv-l-o-4", "name": "Chicken Tikka Roll", "description": "Grilled chicken in a spicy wrap", "why": "Fast, filling, and smoky. Perfect for a quick break.", "time": "15m", "calories": "410 kcal", "spiceLevel": "Medium", "searchTerm": "chicken tikka roll" },
+                { "id": "nv-l-o-5", "name": "Mutton Thali", "description": "Complete meal with mutton curry and sides", "why": "A rustic and hearty Sunday-style lunch feast.", "time": "45m", "calories": "800 kcal", "spiceLevel": "High", "searchTerm": "mutton thali" },
+                { "id": "nv-l-o-6", "name": "Fried Chicken Burger", "description": "Crispy chicken patty with spicy mayo", "why": "Crunchy satisfaction in every single bite.", "time": "20m", "calories": "650 kcal", "spiceLevel": "Mild", "searchTerm": "chicken burger" },
+                { "id": "nv-l-o-7", "name": "Thai Green Curry", "description": "Chicken and veggies in aromatic coconut milk", "why": "Zesty, creamy, and vibrantly flavored.", "time": "30m", "calories": "480 kcal", "spiceLevel": "Medium", "searchTerm": "thai green curry chicken" },
+                { "id": "nv-l-o-8", "name": "Chicken Lollipop", "description": "Spicy deep-fried chicken wings", "why": "The fun, messy, and savory lunch favorite.", "time": "25m", "calories": "520 kcal", "spiceLevel": "High", "searchTerm": "chicken lollipop" },
+                { "id": "nv-l-o-9", "name": "Grilled Fish", "description": "Herb-crusted fish with roasted veggies", "why": "Lean, clean, and incredibly tasty.", "time": "25m", "calories": "350 kcal", "spiceLevel": "Mild", "searchTerm": "grilled fish" },
+                { "id": "nv-l-o-10", "name": "Mutton Keema Pav", "description": "Spiced minced mutton with buttery rolls", "why": "The Mumbai cafe classic that works any time.", "time": "20m", "calories": "590 kcal", "spiceLevel": "High", "searchTerm": "mutton keema pav" }
             ],
             "cook": [
-                {
-                    "id": "nv-l-c-1",
-                    "name": "Chicken Curry Rice",
-                    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
-                    "description": "Simple home-style chicken curry with steamed rice",
-                    "why": "The ultimate comfort meal. Mom's recipe never fails!",
-                    "searchTerm": "simple chicken curry recipe"
-                },
-                {
-                    "id": "nv-l-c-2",
-                    "name": "Chicken Fried Rice",
-                    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop",
-                    "description": "Indo-Chinese style rice with chicken & veggies",
-                    "why": "Leftover rice? Add chicken and make it special!",
-                    "searchTerm": "chicken fried rice recipe"
-                }
+                { "id": "nv-l-c-1", "name": "Chicken Curry", "description": "Simple home-style chicken stew", "why": "The reliable lunchtime hero. Best with rice.", "time": "45m", "calories": "420 kcal", "spiceLevel": "Medium", "searchTerm": "chicken curry recipe" },
+                { "id": "nv-l-c-2", "name": "Chicken Stir Fry", "description": "Flash-cooked chicken with bell peppers", "why": "15 minutes from prep to plate. Rapid protein.", "time": "15m", "calories": "310 kcal", "spiceLevel": "Medium", "searchTerm": "chicken stir fry recipe" },
+                { "id": "nv-l-c-3", "name": "Steamed Fish", "description": "Fish fillets with ginger and soy", "why": "Clean, light, and surprisingly easy to master.", "time": "20m", "calories": "220 kcal", "spiceLevel": "Mild", "searchTerm": "steamed fish recipe" }
             ]
         },
         "snacks": {
             "order": [
-                {
-                    "id": "nv-s-o-1",
-                    "name": "Chicken 65",
-                    "image": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=600&h=400&fit=crop",
-                    "description": "Crispy spiced fried chicken - a Bengaluru invention!",
-                    "why": "Born right here in Bengaluru! Spicy, crispy, addictive.",
-                    "searchTerm": "chicken 65 near me"
-                },
-                {
-                    "id": "nv-s-o-2",
-                    "name": "Chilli Chicken",
-                    "image": "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&h=400&fit=crop",
-                    "description": "Indo-Chinese style chicken with peppers & onions",
-                    "why": "That perfect sweet-spicy-tangy combo. Can't eat just one!",
-                    "searchTerm": "chilli chicken near me"
-                },
-                {
-                    "id": "nv-s-o-3",
-                    "name": "Chicken Momos",
-                    "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&h=400&fit=crop",
-                    "description": "Steamed or fried dumplings with spicy chutney",
-                    "why": "Indiranagar street food vibes! Hot, juicy, perfect.",
-                    "searchTerm": "chicken momos near me"
-                }
+                { "id": "nv-s-o-1", "name": "Chicken 65", "description": "Fiery deep-fried chicken bites", "why": "Bengaluru's gift to the snacking world.", "time": "20m", "calories": "450 kcal", "spiceLevel": "High", "searchTerm": "chicken 65" },
+                { "id": "nv-s-o-2", "name": "Chilli Chicken", "description": "Indo-Chinese chicken with peppers", "why": "The perfect balance of sweet, spicy, and tangy.", "time": "20m", "calories": "420 kcal", "spiceLevel": "High", "searchTerm": "chilli chicken" },
+                { "id": "nv-s-o-3", "name": "Chicken Momos", "description": "Steamed dumplings with spicy chutney", "why": "Juicy and hot. The ultimate street side snack.", "time": "15m", "calories": "280 kcal", "spiceLevel": "Medium", "searchTerm": "chicken momos" }
             ],
             "cook": [
-                {
-                    "id": "nv-s-c-1",
-                    "name": "Chicken Nuggets",
-                    "image": "https://images.unsplash.com/photo-1562967914-608f82629710?w=600&h=400&fit=crop",
-                    "description": "Crispy breaded chicken bites with dipping sauce",
-                    "why": "Kids and adults alike! Air fryer makes it healthy-ish.",
-                    "searchTerm": "homemade chicken nuggets recipe"
-                },
-                {
-                    "id": "nv-s-c-2",
-                    "name": "Chicken Sandwich",
-                    "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&h=400&fit=crop",
-                    "description": "Leftover chicken turned into a gourmet sandwich",
-                    "why": "Quick assembly, gourmet result. Use that leftover chicken!",
-                    "searchTerm": "chicken sandwich recipe easy"
-                }
-            ]
-        },
-        "dinner": {
-            "order": [
-                {
-                    "id": "nv-d-o-1",
-                    "name": "Mutton Biryani",
-                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
-                    "description": "Slow-cooked mutton with fragrant basmati rice",
-                    "why": "The ultimate dinner indulgence! Worth every calorie.",
-                    "searchTerm": "mutton biryani near me"
-                },
-                {
-                    "id": "nv-d-o-2",
-                    "name": "Pepper Chicken",
-                    "image": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=600&h=400&fit=crop",
-                    "description": "South Indian dry chicken with crushed black pepper",
-                    "why": "Spicy, aromatic, uniquely South Indian. A flavor explosion!",
-                    "searchTerm": "pepper chicken bengaluru"
-                },
-                {
-                    "id": "nv-d-o-3",
-                    "name": "Tandoori Chicken",
-                    "image": "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&h=400&fit=crop",
-                    "description": "Charred, smoky, marinated chicken with mint chutney",
-                    "why": "That smoky, charred goodness! Restaurant quality delivered.",
-                    "searchTerm": "tandoori chicken near me"
-                }
-            ],
-            "cook": [
-                {
-                    "id": "nv-d-c-1",
-                    "name": "Butter Chicken",
-                    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
-                    "description": "Creamy tomato chicken curry - restaurant style at home",
-                    "why": "Impress yourself! Easier than you think to make at home.",
-                    "searchTerm": "butter chicken recipe easy"
-                },
-                {
-                    "id": "nv-d-c-2",
-                    "name": "Keema Pav",
-                    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop",
-                    "description": "Spiced minced meat with buttery bread rolls",
-                    "why": "One-pot wonder! Make once, eat twice.",
-                    "searchTerm": "keema pav recipe"
-                },
-                {
-                    "id": "nv-d-c-3",
-                    "name": "Chicken Stir Fry",
-                    "image": "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&h=400&fit=crop",
-                    "description": "Quick Indo-Chinese chicken with vegetables",
-                    "why": "15 minutes, one pan, tons of flavor. Weeknight winner!",
-                    "searchTerm": "chicken stir fry recipe"
-                }
-            ]
-        },
-        "late-night": {
-            "order": [
-                {
-                    "id": "nv-ln-o-1",
-                    "name": "Chicken Shawarma",
-                    "image": "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&h=400&fit=crop",
-                    "description": "Spiced chicken wrapped with garlic sauce & pickles",
-                    "why": "The ultimate late-night street food! Quick, filling, delicious.",
-                    "searchTerm": "chicken shawarma near me"
-                },
-                {
-                    "id": "nv-ln-o-2",
-                    "name": "Chicken Roll",
-                    "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop",
-                    "description": "Kati roll with spiced chicken, onions & chutney",
-                    "why": "Kolkata street food that works any time! Portable & tasty.",
-                    "searchTerm": "chicken roll near me"
-                },
-                {
-                    "id": "nv-ln-o-3",
-                    "name": "Chicken Burger",
-                    "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop",
-                    "description": "Juicy chicken patty with all the fixings",
-                    "why": "Sometimes you just need a burger. No explanation required!",
-                    "searchTerm": "chicken burger delivery"
-                }
-            ],
-            "cook": [
-                {
-                    "id": "nv-ln-c-1",
-                    "name": "Chicken Maggi",
-                    "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&h=400&fit=crop",
-                    "description": "Maggi noodles upgraded with shredded chicken",
-                    "why": "Maggi, but make it protein! Leftover chicken works perfectly.",
-                    "searchTerm": "chicken maggi recipe"
-                },
-                {
-                    "id": "nv-ln-c-2",
-                    "name": "Chicken Sandwich",
-                    "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&h=400&fit=crop",
-                    "description": "Mayo, cheese, leftover chicken - ultimate midnight snack",
-                    "why": "Fridge raid champion! 5 minutes to satisfaction.",
-                    "searchTerm": "quick chicken sandwich recipe"
-                }
+                { "id": "nv-s-c-1", "name": "Chicken Sandwich", "description": "Mayo-laden shredded chicken sandwich", "why": "Use leftover roast chicken for a fast fix.", "time": "10m", "calories": "350 kcal", "spiceLevel": "Mild", "searchTerm": "shredded chicken sandwich" }
             ]
         }
     },
     "egg": {
         "breakfast": {
             "order": [
-                {
-                    "id": "e-b-o-1",
-                    "name": "Egg Dosa",
-                    "image": "https://images.unsplash.com/photo-1668236543090-82bbe35b5b8c?w=600&h=400&fit=crop",
-                    "description": "Crispy dosa topped with a runny egg",
-                    "why": "South Indian meets protein! Quick, satisfying, delicious.",
-                    "searchTerm": "egg dosa near me"
-                },
-                {
-                    "id": "e-b-o-2",
-                    "name": "Bread Omelette",
-                    "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop",
-                    "description": "Fluffy omelette sandwiched in buttered bread",
-                    "why": "Street food classic! Simple, filling, always hits right.",
-                    "searchTerm": "bread omelette near me"
-                }
+                { "id": "e-b-o-1", "name": "Egg Dosa", "description": "Dosa with an egg cracked right on top", "why": "Protein-rich staple of South Indian mornings.", "time": "15m", "calories": "280 kcal", "spiceLevel": "Medium", "searchTerm": "egg dosa" },
+                { "id": "e-b-o-2", "name": "Bread Omelette", "description": "Toast folded inside a spicy omelette", "why": "The king of Indian street-style breakfasts.", "time": "10m", "calories": "320 kcal", "spiceLevel": "Medium", "searchTerm": "bread omelette" }
             ],
             "cook": [
-                {
-                    "id": "e-b-c-1",
-                    "name": "Egg Bhurji",
-                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
-                    "description": "Spiced scrambled eggs with onions & tomatoes",
-                    "why": "The Indian scramble! Ready in 10 minutes, tastes amazing.",
-                    "searchTerm": "egg bhurji recipe"
-                },
-                {
-                    "id": "e-b-c-2",
-                    "name": "Boiled Eggs with Toast",
-                    "image": "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=600&h=400&fit=crop",
-                    "description": "Perfect boiled eggs with buttered toast soldiers",
-                    "why": "Classic for a reason! Healthy, quick, satisfying.",
-                    "searchTerm": "perfect boiled eggs"
-                },
-                {
-                    "id": "e-b-c-3",
-                    "name": "Anda Paratha",
-                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
-                    "description": "Paratha with egg cooked right on top",
-                    "why": "Dhaba style breakfast at home! Filling and flavorful.",
-                    "searchTerm": "anda paratha recipe"
-                }
+                { "id": "e-b-c-1", "name": "Egg Bhurji", "description": "Indian style peppery scrambled eggs", "why": "Fast, fiery, and fantastic. Best with buttered Pav.", "time": "10m", "calories": "240 kcal", "spiceLevel": "High", "searchTerm": "egg bhurji recipe" },
+                { "id": "e-b-c-2", "name": "French Toast", "description": "Eggy bread with sweet or savory syrup", "why": "The ultimate quick-fix breakfast classic.", "time": "15m", "calories": "340 kcal", "spiceLevel": "None", "searchTerm": "french toast recipe" }
             ]
         },
         "lunch": {
             "order": [
-                {
-                    "id": "e-l-o-1",
-                    "name": "Egg Biryani",
-                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
-                    "description": "Fragrant rice with spiced boiled eggs",
-                    "why": "Budget biryani that doesn't compromise on flavor!",
-                    "searchTerm": "egg biryani near me"
-                },
-                {
-                    "id": "e-l-o-2",
-                    "name": "Egg Curry Rice",
-                    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&h=400&fit=crop",
-                    "description": "Boiled eggs in spicy curry with steamed rice",
-                    "why": "Comfort food at its finest! Homey, hearty, satisfying.",
-                    "searchTerm": "egg curry rice"
-                }
+                { "id": "e-l-o-1", "name": "Egg Biryani", "description": "Aromatic rice with spiced boiled eggs", "why": "Biryani flavor on a budget. Super satisfying.", "time": "30m", "calories": "520 kcal", "spiceLevel": "High", "searchTerm": "egg biryani" },
+                { "id": "e-l-o-2", "name": "Egg Fried Rice", "description": "Golden rice with scrambled egg bits", "why": "Simple, savory, and always reliable.", "time": "20m", "calories": "450 kcal", "spiceLevel": "Medium", "searchTerm": "egg fried rice" }
             ],
             "cook": [
-                {
-                    "id": "e-l-c-1",
-                    "name": "Egg Fried Rice",
-                    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop",
-                    "description": "Wok-tossed rice with scrambled eggs & veggies",
-                    "why": "Leftover rice + eggs = 15 minute lunch magic!",
-                    "searchTerm": "egg fried rice recipe"
-                },
-                {
-                    "id": "e-l-c-2",
-                    "name": "Egg Curry",
-                    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
-                    "description": "Boiled eggs in rich onion-tomato gravy",
-                    "why": "Simple, nutritious, and goes with everything. Make extra!",
-                    "searchTerm": "egg curry recipe easy"
-                }
-            ]
-        },
-        "snacks": {
-            "order": [
-                {
-                    "id": "e-s-o-1",
-                    "name": "Egg Puff",
-                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
-                    "description": "Flaky pastry filled with spiced egg masala",
-                    "why": "Bakery classic! Perfect with cutting chai.",
-                    "searchTerm": "egg puff near me"
-                },
-                {
-                    "id": "e-s-o-2",
-                    "name": "Egg Roll",
-                    "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop",
-                    "description": "Egg paratha wrapped with onions & chutney",
-                    "why": "Street food that fills you up! Quick, tasty, portable.",
-                    "searchTerm": "egg roll near me"
-                }
-            ],
-            "cook": [
-                {
-                    "id": "e-s-c-1",
-                    "name": "Egg Bhurji Pav",
-                    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&h=400&fit=crop",
-                    "description": "Spiced scrambled eggs in buttery bread rolls",
-                    "why": "Mumbai-style snack, ready in minutes! Pure comfort.",
-                    "searchTerm": "egg bhurji pav recipe"
-                },
-                {
-                    "id": "e-s-c-2",
-                    "name": "Deviled Eggs",
-                    "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&h=400&fit=crop",
-                    "description": "Stuffed eggs with creamy spiced yolk filling",
-                    "why": "Fancy looking, easy making! Great for guests too.",
-                    "searchTerm": "deviled eggs recipe indian"
-                }
-            ]
-        },
-        "dinner": {
-            "order": [
-                {
-                    "id": "e-d-o-1",
-                    "name": "Egg Curry with Paratha",
-                    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&h=400&fit=crop",
-                    "description": "Spicy egg curry with flaky layered bread",
-                    "why": "Dhaba vibes at home! Rich, filling, satisfying.",
-                    "searchTerm": "egg curry paratha"
-                },
-                {
-                    "id": "e-d-o-2",
-                    "name": "Egg Biryani",
-                    "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
-                    "description": "Layered rice with masala eggs and raita",
-                    "why": "All the biryani joy without breaking the bank!",
-                    "searchTerm": "egg biryani near me"
-                }
-            ],
-            "cook": [
-                {
-                    "id": "e-d-c-1",
-                    "name": "Shakshuka",
-                    "image": "https://images.unsplash.com/photo-1590412200988-a436970781fa?w=600&h=400&fit=crop",
-                    "description": "Eggs poached in spiced tomato-pepper sauce",
-                    "why": "Mediterranean meets Indian! One pan, tons of flavor.",
-                    "searchTerm": "shakshuka recipe"
-                },
-                {
-                    "id": "e-d-c-2",
-                    "name": "Egg Masala",
-                    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
-                    "description": "Boiled eggs in thick onion gravy with chapati",
-                    "why": "Classic comfort food! Make the gravy, add eggs, done.",
-                    "searchTerm": "egg masala recipe"
-                },
-                {
-                    "id": "e-d-c-3",
-                    "name": "Omelette Rice",
-                    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop",
-                    "description": "Japanese-style omurice with ketchup rice",
-                    "why": "Fun to make, delicious to eat! Kids love this too.",
-                    "searchTerm": "omurice recipe easy"
-                }
-            ]
-        },
-        "late-night": {
-            "order": [
-                {
-                    "id": "e-ln-o-1",
-                    "name": "Egg Roll",
-                    "image": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&h=400&fit=crop",
-                    "description": "Quick egg paratha roll with toppings",
-                    "why": "Late night hunger solved! Quick, cheap, filling.",
-                    "searchTerm": "egg roll near me"
-                },
-                {
-                    "id": "e-ln-o-2",
-                    "name": "Egg Fried Rice",
-                    "image": "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&h=400&fit=crop",
-                    "description": "Indo-Chinese style egg rice from the corner shop",
-                    "why": "When only fried rice will do. Classic midnight choice!",
-                    "searchTerm": "egg fried rice near me"
-                }
-            ],
-            "cook": [
-                {
-                    "id": "e-ln-c-1",
-                    "name": "Egg Maggi",
-                    "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=600&h=400&fit=crop",
-                    "description": "Maggi topped with a perfectly cooked egg",
-                    "why": "The ultimate hostel combination! Quick and satisfying.",
-                    "searchTerm": "egg maggi recipe"
-                },
-                {
-                    "id": "e-ln-c-2",
-                    "name": "French Toast",
-                    "image": "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=600&h=400&fit=crop",
-                    "description": "Eggy bread, pan-fried with cinnamon & sugar",
-                    "why": "Sweet or savory, you decide! 5 minute comfort food.",
-                    "searchTerm": "french toast recipe"
-                },
-                {
-                    "id": "e-ln-c-3",
-                    "name": "Egg Sandwich",
-                    "image": "https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&h=400&fit=crop",
-                    "description": "Fried or scrambled egg between bread slices",
-                    "why": "Simple but perfect. Sometimes that's all you need!",
-                    "searchTerm": "egg sandwich recipe"
-                }
+                { "id": "e-l-c-1", "name": "Egg Curry", "description": "Boiled eggs in a rich tomato-onion base", "why": "Mom's go-to lazy weekday lunch. Best with rice.", "time": "30m", "calories": "310 kcal", "spiceLevel": "Medium", "searchTerm": "egg curry recipe" }
             ]
         }
     }
