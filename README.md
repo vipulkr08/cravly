@@ -1,16 +1,54 @@
-# React + Vite
+# Cravely. 🥘
+### *The "No-Thinking, Just Eating" Editorial Discovery Tool.*
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Cravely. is a high-end, minimalist web application designed to solve the "Paradox of Choice" in meal selection. By stripping away food imagery and focusing on clean typography and curated discovery, we help you decide what to eat in under three taps.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🖋️ Design Philosophy: "No Imagery, Just Discovery"
+Most food apps overwhelm users with infinite scrolls of low-quality photos. Cravely. takes an editorial approach—using bold serif typography (Playfair Display) and a high-contrast design system to make decision-making feel like reading a premium food journal.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Key Features
+- **Eggetarian-First Logic**: Intelligent filtering that merges Vegetarian and Egg-based dishes.
+- **Editorial Discovery**: A curated "Surprise Me" engine that challenges your palate while respecting your dietary preferences.
+- **Micro-History Management**: Full support for the browser's back button, ensuring a seamless SPA experience.
+- **Persistence by Default**: Remembers your theme (Light/Dark) and your last dietary selections across sessions.
+- **Vivid Brand Identity**: A consistent Design System using emerald accents and signature brand marks.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Built With
+- **Core**: [React 19](https://react.dev/) + [Vite 7](https://vite.dev/)
+- **Styling**: Vanilla CSS (Tailored Design Tokens)
+- **Aesthetic**: Editorial Minimalism (Serif × Sans pairing)
+
+---
+
+## 🚀 Getting Started
+### 1. Install Dependencies
+```powershell
+npm install
+```
+
+### 2. Run Locally
+```powershell
+npm run dev
+```
+
+### 3. Build for Production
+```powershell
+npm run build
+```
+
+---
+
+## 🌩️ Deployment
+Cravely. is production-ready and optimized for zero-config hosting on [Vercel](https://vercel.com).
+Refer to our [Deployment Guide](file:///C:/Users/vipul/.gemini/antigravity/brain/1416fa8d-b3b7-41d7-8e03-097ebf1ac92c/deployment_guide.md) for more details.
+
+---
+
+© 2026 Cravely. Purely functional discovery.
+
