@@ -1,10 +1,12 @@
 import React from 'react';
 
-function Header({ onSurpriseMe, theme, toggleTheme }) {
+function Header({ onSurpriseMe, theme, toggleTheme, onLogoClick }) {
     return (
         <header className="minimal-header">
           <div className="header-inner">
-            <h1 className="logo-text">Cravely</h1>
+            <h1 className="logo-text" onClick={onLogoClick}>
+              Cravely<span className="logo-dot">.</span>
+            </h1>
             <div className="header-actions">
               <button 
                 className="theme-toggle" 
@@ -14,7 +16,7 @@ function Header({ onSurpriseMe, theme, toggleTheme }) {
                 {theme === 'dark' ? '☀️' : '🌙'}
               </button>
               <button className="btn-surprise" onClick={onSurpriseMe}>
-                Surprise Me
+                SURPRISE ME
               </button>
             </div>
           </div>

@@ -9,29 +9,52 @@ import './App.css';
 function App() {
   // State
   const [screen, setScreen] = useState('input'); // 'input' | 'suggestion'
-  const [dietType, setDietType] = useState('veg');
-  const [mode, setMode] = useState('order'); // 'order' (Buy) | 'cook' (Cook)
+  const [dietType, setDietType] = useState(() => localStorage.getItem('cravely-diet') || 'veg');
+  const [mode, setMode] = useState(() => localStorage.getItem('cravely-mode') || 'order'); 
   const [currentDishes, setCurrentDishes] = useState([]);
   const [mealTime, setMealTime] = useState(getMealTime());
   const [manualMealOverride, setManualMealOverride] = useState(null);
+  const [initialPrefs, setInitialPrefs] = useState(null); // Backup for "Surprise Me"
   
-  // Theme State
+  // Theme State (persisted)
   const [theme, setTheme] = useState(() => {
-    // Check if we are running in browser and detect preference
+    const saved = localStorage.getItem('cravely-theme');
+    if (saved) return saved;
     if (typeof window !== 'undefined' && window.matchMedia) {
       return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
-    return 'light'; // Fallback
+    return 'light';
   });
 
   // Apply theme class to document element
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('cravely-theme', theme);
   }, [theme]);
+
+  // Persist preferences
+  useEffect(() => {
+    localStorage.setItem('cravely-diet', dietType);
+    localStorage.setItem('cravely-mode', mode);
+  }, [dietType, mode]);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
+
+  // Handle browser back button
+  useEffect(() => {
+    const handlePopState = (event) => {
+      if (event.state && event.state.screen === 'suggestion') {
+        setScreen('suggestion');
+      } else {
+        setScreen('input');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   // Update meal time periodically
   useEffect(() => {
@@ -48,35 +71,42 @@ function App() {
     const dishes = getMultipleRecommendations(dietType, mode, finalMealTime, 3);
     setCurrentDishes(dishes);
     setScreen('suggestion');
+    window.history.pushState({ screen: 'suggestion' }, '');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Deep Randomization for "Surprise Me"
   const handleSurpriseMe = () => {
+    // Store current state so we can restore it later
+    setInitialPrefs({ dietType, mode, manualMealOverride });
+
     const diets = ['veg', 'non-veg', 'egg'];
     const modes = ['order', 'cook'];
     const mealTimes = ['breakfast', 'lunch', 'snacks', 'dinner', 'late-night'];
     
-    const randomDiet = diets[Math.floor(Math.random() * diets.length)];
+    // Most users want surprise to respect their diet
+    // If they haven't changed from 'veg', we'll still treat it as a preference
+    const targetDiet = dietType || diets[Math.floor(Math.random() * diets.length)];
     const randomMode = modes[Math.floor(Math.random() * modes.length)];
     const randomMeal = mealTimes[Math.floor(Math.random() * mealTimes.length)];
     
-    setDietType(randomDiet);
+    setDietType(targetDiet);
     setMode(randomMode);
     setManualMealOverride(randomMeal);
     
-    const dishes = getMultipleRecommendations(randomDiet, randomMode, randomMeal, 3);
+    const dishes = getMultipleRecommendations(targetDiet, randomMode, randomMeal, 3);
     setCurrentDishes(dishes);
     setScreen('suggestion');
+    window.history.pushState({ screen: 'suggestion' }, '');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Handle shuffle (Rotate options)
+  // Handle shuffle (Fetch fresh recommendations)
   const handleShuffle = () => {
-    if (currentDishes.length > 1) {
-      const rotated = [...currentDishes.slice(1), currentDishes[0]];
-      setCurrentDishes(rotated);
-    }
+    const finalMealTime = manualMealOverride || mealTime;
+    const dishes = getMultipleRecommendations(dietType, mode, finalMealTime, 3);
+    setCurrentDishes(dishes);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Handle selecting a specific dish from alternates
@@ -89,8 +119,19 @@ function App() {
 
   // Handle going back
   const handleBack = () => {
+    // Restore initial preferences if we were in "Surprise Me" mode
+    if (initialPrefs) {
+      setDietType(initialPrefs.dietType);
+      setMode(initialPrefs.mode);
+      setManualMealOverride(initialPrefs.manualMealOverride);
+      setInitialPrefs(null);
+    }
+    
     setScreen('input');
     resetShownDishes();
+    if (window.history.state && window.history.state.screen === 'suggestion') {
+      window.history.back();
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -99,7 +140,8 @@ function App() {
       <Header 
         onSurpriseMe={handleSurpriseMe} 
         theme={theme} 
-        toggleTheme={toggleTheme} 
+        toggleTheme={toggleTheme}
+        onLogoClick={handleBack}
       />
       
       <div className="screen-container">
@@ -124,6 +166,10 @@ function App() {
           />
         )}
       </div>
+
+      <footer className="minimal-footer">
+        <p className="footer-text">© 2026 Cravely. Purely functional discovery.</p>
+      </footer>
     </div>
   );
 }

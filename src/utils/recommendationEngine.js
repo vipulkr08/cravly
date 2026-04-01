@@ -28,22 +28,34 @@ function getRandomItem(array) {
 export function getRecommendation(dietType, mode, mealTime = null) {
     const currentMealTime = mealTime || getMealTime();
 
-    // Navigate to the correct dishes array
-    const dietDishes = dishes[dietType];
-    if (!dietDishes) {
-        console.error(`Invalid diet type: ${dietType}`);
-        return null;
+    // Eggetarian logic: If diet is egg, include both egg and veg dishes
+    let modeDishes = [];
+    if (dietType === 'egg') {
+        const vegDietDishes = dishes['veg'];
+        const eggDietDishes = dishes['egg'];
+
+        const vegMealDishes = vegDietDishes?.[currentMealTime]?.[mode] || [];
+        const eggMealDishes = eggDietDishes?.[currentMealTime]?.[mode] || [];
+        
+        modeDishes = [...vegMealDishes, ...eggMealDishes];
+    } else {
+        const dietDishes = dishes[dietType];
+        if (!dietDishes) {
+            console.error(`Invalid diet type: ${dietType}`);
+            return null;
+        }
+
+        const mealDishes = dietDishes[currentMealTime];
+        if (!mealDishes) {
+            console.error(`No dishes found for meal time: ${currentMealTime}`);
+            return null;
+        }
+
+        modeDishes = mealDishes[mode] || [];
     }
 
-    const mealDishes = dietDishes[currentMealTime];
-    if (!mealDishes) {
-        console.error(`No dishes found for meal time: ${currentMealTime}`);
-        return null;
-    }
-
-    const modeDishes = mealDishes[mode];
     if (!modeDishes || modeDishes.length === 0) {
-        console.error(`No dishes found for mode: ${mode}`);
+        console.error(`No dishes found for diet ${dietType}, time ${currentMealTime}, mode ${mode}`);
         return null;
     }
 
@@ -122,28 +134,50 @@ export function getMultipleRecommendations(dietType, mode, mealTime = null, coun
     };
 
     // 1. Try Exact Match
-    candidates = getDishes(dietType, currentMealTime, mode);
+    if (dietType === 'egg') {
+        const vegPool = getDishes('veg', currentMealTime, mode);
+        const eggPool = getDishes('egg', currentMealTime, mode);
+        candidates = [...vegPool, ...eggPool];
+    } else {
+        candidates = getDishes(dietType, currentMealTime, mode);
+    }
 
     // 2. If not enough, try right diet & time, but SWAP mode (order <-> cook)
     if (!candidates || candidates.length < count) {
         const otherMode = mode === 'order' ? 'cook' : 'order';
-        const fallbackDishes = getDishes(dietType, currentMealTime, otherMode);
+        let fallbackDishes = [];
+        if (dietType === 'egg') {
+            const vegFallback = getDishes('veg', currentMealTime, otherMode);
+            const eggFallback = getDishes('egg', currentMealTime, otherMode);
+            fallbackDishes = [...vegFallback, ...eggFallback];
+        } else {
+            fallbackDishes = getDishes(dietType, currentMealTime, otherMode);
+        }
         candidates = [...(candidates || []), ...fallbackDishes];
     }
 
     // 3. If STILL not enough, get ANY dish from this diet (desperation mode)
     if (!candidates || candidates.length < count) {
         const anyDietDishes = [];
-        try {
-            const dt = dishes[dietType];
-            if (dt) {
-                Object.values(dt).forEach(meal => {
-                    Object.values(meal).forEach(list => {
-                        if (Array.isArray(list)) anyDietDishes.push(...list);
+        const gatherAny = (dt) => {
+            try {
+                const dietObj = dishes[dt];
+                if (dietObj) {
+                    Object.values(dietObj).forEach(meal => {
+                        Object.values(meal).forEach(list => {
+                            if (Array.isArray(list)) anyDietDishes.push(...list);
+                        });
                     });
-                });
-            }
-        } catch (e) { }
+                }
+            } catch (e) { }
+        };
+
+        if (dietType === 'egg') {
+            gatherAny('veg');
+            gatherAny('egg');
+        } else {
+            gatherAny(dietType);
+        }
         candidates = [...(candidates || []), ...anyDietDishes];
     }
 

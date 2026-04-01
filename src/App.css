@@ -9,18 +9,18 @@
   flex-direction: column;
   background: var(--bg-primary);
   color: var(--text-main);
-  padding: 0 var(--spacing-sm);
+  padding: 0; /* Remove horizontal padding here to allow full-width footer if needed, or manage it in children */
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 .minimal-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  padding: var(--spacing-sm) 0;
-  background: rgba(255, 255, 255, 0.8);
+  padding: 12px 0;
+  background: var(--bg-glass);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--bg-tertiary);
   width: 100%;
 }
@@ -40,10 +40,23 @@
 
 .logo-text {
   font-family: var(--font-display);
-  font-size: 1.25rem; /* ~20px */
+  font-size: 1.5rem;
   color: var(--brand-green);
   font-weight: 800;
   cursor: pointer;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.logo-dot {
+  color: #D62828; /* A vibrant editorial red dot */
+  margin-left: 2px;
+}
+
+.logo-text:hover {
+  opacity: 0.8;
 }
 
 .header-actions {
@@ -71,35 +84,43 @@
 }
 
 .btn-surprise {
-  background: var(--bg-secondary);
-  border: 1px solid var(--bg-tertiary);
-  color: var(--text-secondary);
+  background: #2D6A4F;
+  color: #FFFFFF;
+  border: none;
   padding: 8px 16px;
-  border-radius: var(--radius-sm);
-  font-size: 0.7rem;
-  font-weight: 700;
-  cursor: pointer;
-  letter-spacing: 0.1em; /* Editorial spacing */
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+[data-theme="dark"] .btn-surprise {
+  background: #52B788;
+  color: #121212;
 }
 
 .btn-surprise:hover {
   transform: scale(1.05);
-  background: var(--bg-tertiary);
 }
 
 /* Base Landing Layout (Mobile First) */
 .landing-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically in the available space */
   width: 100%;
   max-width: 500px;
-  margin: 10vh auto;
-  padding: 0 var(--spacing-sm) var(--spacing-2xl); /* Added bottom breathing room */
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-sm);
   text-align: center;
 }
 
 .title-hero {
-  font-size: 2rem; /* Mobile */
+  font-size: 2rem;
   line-height: 1.1;
   margin-bottom: var(--spacing-sm);
   letter-spacing: -0.02em;
@@ -108,8 +129,20 @@
 .desc-hero {
   font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
   line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Selection Group Labels */
+.group-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-align: left;
 }
 
 /* Toggles & Selection */
@@ -132,10 +165,10 @@
   flex: 1;
   padding: 12px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   transition: var(--transition-fast);
 }
 
@@ -155,7 +188,7 @@
 .diet-pill {
   padding: 6px 16px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px solid var(--bg-tertiary);
   border-radius: var(--radius-full);
   cursor: pointer;
@@ -166,14 +199,15 @@
   background: var(--brand-green);
   color: var(--bg-primary);
   border-color: var(--brand-green);
+  font-weight: 700;
 }
 
 .btn-primary-simple {
-  background: var(--brand-green);
-  color: var(--bg-primary);
+  background: #2D6A4F;
+  color: #FFFFFF;
   border: none;
   padding: 1.2rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
@@ -183,17 +217,32 @@
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
 }
 
+[data-theme="dark"] .btn-primary-simple {
+  background: #52B788;
+  color: #121212;
+}
+
 .btn-primary-simple:hover {
   transform: scale(1.02);
   opacity: 0.9;
 }
 
+.screen-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 /* Result Screen (Mobile First) */
 .result-screen-minimal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 500px;
-  margin: 5vh auto;
-  padding: 0 var(--spacing-sm) var(--spacing-2xl); /* Added bottom breathing room */
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-sm); /* Tightened up */
 }
 
 .back-link {
@@ -268,6 +317,7 @@
   line-height: 1.6;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
+  font-weight: 400;
 }
 
 .dish-stats-minimal {
@@ -300,17 +350,22 @@
 
 .btn-secondary-simple {
   flex: 3;
-  background: var(--brand-green);
-  color: var(--bg-primary);
+  background: #2D6A4F;
+  color: #FFFFFF;
   border: none;
   padding: 1rem;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+[data-theme="dark"] .btn-secondary-simple {
+  background: #52B788;
+  color: #121212;
 }
 
 .btn-secondary-simple:hover {
@@ -323,9 +378,68 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--bg-tertiary);
-  border-radius: var(--radius-sm);
-  font-size: 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   background: var(--bg-primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.shuffle-minimal:hover {
+  background: var(--bg-secondary);
+}
+
+/* Other Suggestions - Theme Aware */
+.alt-section {
+  margin-top: var(--spacing-lg);
+}
+
+.alt-section-title {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.alt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alt-item {
+  padding: 12px;
+  border: 1px solid var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition-fast);
+  background: var(--bg-secondary);
+}
+
+.alt-item:hover {
+  background: var(--bg-tertiary);
+}
+
+.alt-item-name {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.alt-item-time {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 /* Tablet & Desktop Adjustments */
@@ -353,9 +467,9 @@
 
 .minimal-footer {
   margin-top: auto;
-  padding: 4rem 0; /* Increased from 2rem for a more luxurious feel */
+  padding: 2rem 0; /* Reduced from 4rem for better fit */
   text-align: center;
-  border-top: 1px solid var(--bg-tertiary); /* Soft separation */
+  border-top: 1px solid var(--bg-tertiary);
   background: var(--bg-primary);
 }
 
