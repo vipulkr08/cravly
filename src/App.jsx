@@ -9,8 +9,8 @@ import './App.css';
 function App() {
   // State
   const [screen, setScreen] = useState('input'); // 'input' | 'suggestion'
-  const [dietType, setDietType] = useState(() => localStorage.getItem('cravely-diet') || 'veg');
-  const [mode, setMode] = useState(() => localStorage.getItem('cravely-mode') || 'order'); 
+  const [dietType, setDietType] = useState(() => localStorage.getItem('cravly-diet') || 'veg');
+  const [mode, setMode] = useState(() => localStorage.getItem('cravly-mode') || 'order'); 
   const [currentDishes, setCurrentDishes] = useState([]);
   const [mealTime, setMealTime] = useState(getMealTime());
   const [manualMealOverride, setManualMealOverride] = useState(null);
@@ -18,7 +18,7 @@ function App() {
   
   // Theme State (persisted)
   const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('cravely-theme');
+    const saved = localStorage.getItem('cravly-theme');
     if (saved) return saved;
     if (typeof window !== 'undefined' && window.matchMedia) {
       return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -29,13 +29,13 @@ function App() {
   // Apply theme class to document element
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('cravely-theme', theme);
+    localStorage.setItem('cravly-theme', theme);
   }, [theme]);
 
   // Persist preferences
   useEffect(() => {
-    localStorage.setItem('cravely-diet', dietType);
-    localStorage.setItem('cravely-mode', mode);
+    localStorage.setItem('cravly-diet', dietType);
+    localStorage.setItem('cravly-mode', mode);
   }, [dietType, mode]);
 
   const toggleTheme = () => {
@@ -168,7 +168,7 @@ function App() {
       </div>
 
       <footer className="minimal-footer">
-        <p className="footer-text">© 2026 Cravely. Purely functional discovery.</p>
+        <p className="footer-text">© 2026 Cravly. Purely functional discovery.</p>
       </footer>
     </div>
   );

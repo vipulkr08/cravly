@@ -1,12 +1,12 @@
-# Cravely. 🥘
+# Cravly. 🥘
 ### *The "No-Thinking, Just Eating" Editorial Discovery Tool.*
 
-Cravely. is a high-end, minimalist web application designed to solve the "Paradox of Choice" in meal selection. By stripping away food imagery and focusing on clean typography and curated discovery, we help you decide what to eat in under three taps.
+Cravly. is a high-end, minimalist web application designed to solve the "Paradox of Choice" in meal selection. By stripping away food imagery and focusing on clean typography and curated discovery, we help you decide what to eat in under three taps.
 
 ---
 
 ## 🖋️ Design Philosophy: "No Imagery, Just Discovery"
-Most food apps overwhelm users with infinite scrolls of low-quality photos. Cravely. takes an editorial approach—using bold serif typography (Playfair Display) and a high-contrast design system to make decision-making feel like reading a premium food journal.
+Most food apps overwhelm users with infinite scrolls of low-quality photos. Cravly. takes an editorial approach—using bold serif typography (Playfair Display) and a high-contrast design system to make decision-making feel like reading a premium food journal.
 
 ---
 
@@ -45,10 +45,10 @@ npm run build
 ---
 
 ## 🌩️ Deployment
-Cravely. is production-ready and optimized for zero-config hosting on [Vercel](https://vercel.com).
+Cravly. is production-ready and optimized for zero-config hosting on [Vercel](https://vercel.com).
 Refer to our [Deployment Guide](file:///C:/Users/vipul/.gemini/antigravity/brain/1416fa8d-b3b7-41d7-8e03-097ebf1ac92c/deployment_guide.md) for more details.
 
 ---
 
-© 2026 Cravely. Purely functional discovery.
+© 2026 Cravly. Purely functional discovery.
 

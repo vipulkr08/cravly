@@ -1,5 +1,5 @@
 /**
- * Recommendation Engine for Cravely
+ * Recommendation Engine for Cravly
  * Provides single dish recommendations based on diet, mode, and time
  */
 

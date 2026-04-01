@@ -5,7 +5,7 @@ function Header({ onSurpriseMe, theme, toggleTheme, onLogoClick }) {
         <header className="minimal-header">
           <div className="header-inner">
             <h1 className="logo-text" onClick={onLogoClick}>
-              Cravely<span className="logo-dot">.</span>
+              Cravly<span className="logo-dot">.</span>
             </h1>
             <div className="header-actions">
               <button 
