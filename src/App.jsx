@@ -1,161 +1,78 @@
-import { useState, useEffect } from 'react';
+/**
+ * App.jsx — Layout shell only.
+ * All state lives in hooks; App just wires them together and renders the right screen.
+ */
+import { useEffect } from 'react';
+import { useAppContext } from './context/AppContext';
+import { usePreferences } from './hooks/usePreferences';
+import { useMealTime } from './hooks/useMealTime';
+import { useRecommendations } from './hooks/useRecommendations';
+
 import Header from './components/Header';
+import WelcomeScreen from './screens/WelcomeScreen';
 import InputScreen from './screens/InputScreen';
 import SuggestionScreen from './screens/SuggestionScreen';
-import { getMealTime } from './utils/timeUtils';
-import { getMultipleRecommendations, resetShownDishes } from './utils/recommendationEngine';
+
 import './App.css';
 
 function App() {
-  // State
-  const [screen, setScreen] = useState('input'); // 'input' | 'suggestion'
-  const [dietType, setDietType] = useState(() => localStorage.getItem('cravly-diet') || 'veg');
-  const [mode, setMode] = useState(() => localStorage.getItem('cravly-mode') || 'order'); 
-  const [currentDishes, setCurrentDishes] = useState([]);
-  const [mealTime, setMealTime] = useState(getMealTime());
-  const [manualMealOverride, setManualMealOverride] = useState(null);
-  const [initialPrefs, setInitialPrefs] = useState(null); // Backup for "Surprise Me"
-  
-  // Theme State (persisted)
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('cravly-theme');
-    if (saved) return saved;
-    if (typeof window !== 'undefined' && window.matchMedia) {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    return 'light';
-  });
-
-  // Apply theme class to document element
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('cravly-theme', theme);
-  }, [theme]);
-
-  // Persist preferences
-  useEffect(() => {
-    localStorage.setItem('cravly-diet', dietType);
-    localStorage.setItem('cravly-mode', mode);
-  }, [dietType, mode]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
-  };
+  const { theme, toggleTheme } = useAppContext();
+  const { dietType, setDietType, mode, setMode } = usePreferences();
+  const { mealTime, setMealTime } = useMealTime();
+  const {
+    screen,
+    currentDishes,
+    handleGetStarted,
+    handleFeedMe,
+    handleSurpriseMe,
+    handleShuffle,
+    handleSelect,
+    handleBack,
+  } = useRecommendations({ dietType, setDietType, mode, setMode, mealTime, setMealTime });
 
   // Handle browser back button
   useEffect(() => {
-    const handlePopState = (event) => {
-      if (event.state && event.state.screen === 'suggestion') {
-        setScreen('suggestion');
-      } else {
-        setScreen('input');
-      }
+    const onPopState = (e) => {
+      if (!e.state || e.state.screen !== 'suggestion') handleBack();
     };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, [handleBack]);
 
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+  // ── Welcome ──────────────────────────────────────────────────────────────
+  if (screen === 'welcome') {
+    return (
+      <WelcomeScreen
+        onGetStarted={handleGetStarted}
+        onLogin={handleGetStarted}
+      />
+    );
+  }
 
-  // Update meal time periodically
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setMealTime(getMealTime());
-    }, 60000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Handle getting a recommendation
-  const handleFeedMe = () => {
-    const finalMealTime = manualMealOverride || mealTime;
-    const dishes = getMultipleRecommendations(dietType, mode, finalMealTime, 3);
-    setCurrentDishes(dishes);
-    setScreen('suggestion');
-    window.history.pushState({ screen: 'suggestion' }, '');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // Deep Randomization for "Surprise Me"
-  const handleSurpriseMe = () => {
-    // Store current state so we can restore it later
-    setInitialPrefs({ dietType, mode, manualMealOverride });
-
-    const diets = ['veg', 'non-veg', 'egg'];
-    const modes = ['order', 'cook'];
-    const mealTimes = ['breakfast', 'lunch', 'snacks', 'dinner', 'late-night'];
-    
-    // Most users want surprise to respect their diet
-    // If they haven't changed from 'veg', we'll still treat it as a preference
-    const targetDiet = dietType || diets[Math.floor(Math.random() * diets.length)];
-    const randomMode = modes[Math.floor(Math.random() * modes.length)];
-    const randomMeal = mealTimes[Math.floor(Math.random() * mealTimes.length)];
-    
-    setDietType(targetDiet);
-    setMode(randomMode);
-    setManualMealOverride(randomMeal);
-    
-    const dishes = getMultipleRecommendations(targetDiet, randomMode, randomMeal, 3);
-    setCurrentDishes(dishes);
-    setScreen('suggestion');
-    window.history.pushState({ screen: 'suggestion' }, '');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // Handle shuffle (Fetch fresh recommendations)
-  const handleShuffle = () => {
-    const finalMealTime = manualMealOverride || mealTime;
-    const dishes = getMultipleRecommendations(dietType, mode, finalMealTime, 3);
-    setCurrentDishes(dishes);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // Handle selecting a specific dish from alternates
-  const handleSelect = (index) => {
-    if (index === 0) return;
-    const newOrder = [...currentDishes.slice(index), ...currentDishes.slice(0, index)];
-    setCurrentDishes(newOrder);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  // Handle going back
-  const handleBack = () => {
-    // Restore initial preferences if we were in "Surprise Me" mode
-    if (initialPrefs) {
-      setDietType(initialPrefs.dietType);
-      setMode(initialPrefs.mode);
-      setManualMealOverride(initialPrefs.manualMealOverride);
-      setInitialPrefs(null);
-    }
-    
-    setScreen('input');
-    resetShownDishes();
-    if (window.history.state && window.history.state.screen === 'suggestion') {
-      window.history.back();
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+  // ── Main App Shell ────────────────────────────────────────────────────────
   return (
     <div className="app">
-      <Header 
-        onSurpriseMe={handleSurpriseMe} 
-        theme={theme} 
+      <Header
+        theme={theme}
         toggleTheme={toggleTheme}
+        onSurpriseMe={handleSurpriseMe}
         onLogoClick={handleBack}
       />
-      
+
       <div className="screen-container">
-        {screen === 'input' ? (
+        {screen === 'input' && (
           <InputScreen
             dietType={dietType}
             setDietType={setDietType}
             mode={mode}
             setMode={setMode}
+            mealTime={mealTime}
+            setMealTime={setMealTime}
             onFeedMe={handleFeedMe}
-            mealTime={manualMealOverride || mealTime}
-            setMealTime={setManualMealOverride}
           />
-        ) : (
+        )}
+
+        {screen === 'suggestion' && (
           <SuggestionScreen
             dish={currentDishes[0]}
             suggestions={currentDishes}

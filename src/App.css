@@ -9,8 +9,13 @@
   flex-direction: column;
   background: var(--bg-primary);
   color: var(--text-main);
-  padding: 0; /* Remove horizontal padding here to allow full-width footer if needed, or manage it in children */
+  padding: 0;
   max-width: 100%;
+}
+
+/* When showing the welcome screen, strip all bg so the screen is self-contained */
+.app--welcome {
+  background: transparent;
 }
 
 .minimal-header {
