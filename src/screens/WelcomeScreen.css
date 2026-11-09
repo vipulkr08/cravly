@@ -1,0 +1,254 @@
+/* ============================================
+   WelcomeScreen — Cravly
+   Dark-green brand onboarding screen
+   ============================================ */
+
+/* Full-bleed dark green screen */
+.welcome-screen {
+  min-height: 100dvh;
+  background-color: #1a3a2a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 24px 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---- Header ---- */
+.welcome-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.welcome-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.welcome-logo-dot {
+  color: #e8a842;
+}
+
+.welcome-location-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.welcome-location-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.welcome-location-icon {
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+/* ---- Hero Text ---- */
+.welcome-hero {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 36px;
+}
+
+.welcome-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #e8a842;
+  margin-bottom: 12px;
+}
+
+.welcome-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.08;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.welcome-subtext {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 320px;
+}
+
+/* ---- Illustrated Plate ---- */
+.welcome-plate-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+/* Concentric rings */
+.plate-ring-outer {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background-color: #2d5c42;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+}
+
+.plate-ring-middle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-color: #f5f0e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plate-food {
+  width: 182px;
+  height: 182px;
+  border-radius: 50%;
+  background-color: #e8a842;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Decorative dots on the plate */
+.plate-dot {
+  position: absolute;
+  border-radius: 50%;
+  display: block;
+}
+
+.plate-dot--red {
+  background-color: #c0392b;
+  width: 12px;
+  height: 12px;
+}
+
+.plate-dot--white {
+  background-color: #f5f0e8;
+  width: 10px;
+  height: 10px;
+}
+
+.plate-dot--tl  { top: 38px;  left: 42px;  }
+.plate-dot--tr  { top: 44px;  right: 36px; }
+.plate-dot--mr  { top: 50%;   right: 28px; transform: translateY(-50%); }
+.plate-dot--bl  { bottom: 50px; left: 50px; }
+
+/* Squiggle / mood line */
+.plate-squiggle {
+  width: 110px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- CTAs ---- */
+.welcome-cta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.welcome-btn-primary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #e8a842;
+  color: #1a3a2a;
+  border: none;
+  border-radius: 999px;
+  padding: 18px 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.2s;
+}
+
+.welcome-btn-primary:hover {
+  transform: scale(1.03);
+  opacity: 0.93;
+}
+
+.welcome-btn-arrow {
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.welcome-btn-primary:hover .welcome-btn-arrow {
+  transform: translateX(3px);
+}
+
+.welcome-btn-ghost {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 4px 0;
+}
+
+.welcome-btn-ghost:hover {
+  color: #ffffff;
+}
+
+/* ---- Responsive upscale for wider viewports ---- */
+@media (min-width: 480px) {
+  .welcome-headline {
+    font-size: 3rem;
+  }
+
+  .plate-ring-outer  { width: 300px; height: 300px; }
+  .plate-ring-middle { width: 254px; height: 254px; }
+  .plate-food        { width: 212px; height: 212px; }
+}
+
+@media (min-width: 600px) {
+  .welcome-screen {
+    max-width: 420px;
+    margin: 0 auto;
+    border-radius: 24px;
+    min-height: 100dvh;
+  }
+}
