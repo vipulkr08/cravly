@@ -4,9 +4,9 @@ function Header({ onSurpriseMe, theme, toggleTheme, onLogoClick }) {
     return (
         <header className="minimal-header">
           <div className="header-inner">
-            <h1 className="logo-text" onClick={onLogoClick}>
+            <div className="logo-text" role="button" tabIndex={0} onClick={onLogoClick} onKeyDown={(e) => e.key === 'Enter' && onLogoClick && onLogoClick()}>
               Cravly<span className="logo-dot">.</span>
-            </h1>
+            </div>
             <div className="header-actions">
               <button 
                 className="theme-toggle" 

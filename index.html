@@ -3,19 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- SEO Meta Tags -->
-    <title>Cravly. — Find Your Next Meal</title>
-    <meta name="description" content="A curated culinary experience designed for your mood. Order or cook the perfect meal in Bengaluru — no decision fatigue, just delicious." />
-    <meta name="keywords" content="food recommendation, Bengaluru, meal decision, what to eat, food delivery, cooking ideas, cravly." />
+    <!-- Primary SEO Meta Tags -->
+    <title>Cravly — What Should I Eat? | Meal Decision & Food Guide</title>
+    <meta name="title" content="Cravly — What Should I Eat? | Meal Decision & Food Guide" />
+    <meta name="description" content="Cravly helps you decide what to eat in seconds. Match your meal to your mood, time of day, and diet in Bengaluru — whether you want to cook or order food." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://cravly.vercel.app/" />
     
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="Cravly. — Find Your Next Meal" />
-    <meta property="og:description" content="Match your meal to your mood. Stop scrolling, start eating." />
+    <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cravly.vercel.app/" />
+    <meta property="og:site_name" content="Cravly" />
+    <meta property="og:title" content="Cravly — What Should I Eat? | Food Decision Maker" />
+    <meta property="og:description" content="Stop scrolling and start eating. Match your meal to your mood, diet, and time of day in Bengaluru." />
+    <meta property="og:image" content="https://cravly.vercel.app/og-image.png" />
+    <meta property="og:image:alt" content="Cravly - Match your meal to your mood" />
     
-    <!-- PWA / Mobile -->
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://cravly.vercel.app/" />
+    <meta name="twitter:title" content="Cravly — What Should I Eat? | Food Decision Maker" />
+    <meta name="twitter:description" content="Stop scrolling and start eating. Match your meal to your mood, diet, and time of day in Bengaluru." />
+    <meta name="twitter:image" content="https://cravly.vercel.app/og-image.png" />
+    
+    <!-- PWA / Mobile Theme -->
     <meta name="theme-color" content="#1B4332" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -24,6 +37,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data: WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Cravly",
+      "alternateName": ["Cravly App", "Cravly Food Decision Maker"],
+      "url": "https://cravly.vercel.app/",
+      "applicationCategory": "Food & Drink",
+      "operatingSystem": "All",
+      "description": "A curated culinary decision engine designed for your mood. Decide what to cook or order in Bengaluru.",
+      "inLanguage": "en",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

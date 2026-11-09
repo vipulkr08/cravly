@@ -16,7 +16,7 @@ function InputScreen({ dietType, setDietType, mode, setMode, onFeedMe, mealTime,
             <main>
                 <h1 className="title-hero">What should I eat?</h1>
                 <p className="desc-hero">
-                    Because deciding what to eat shouldn't take longer than eating it.
+                    Because deciding what to eat shouldn't take longer than eating it. Cravly pairs your mood with curated meal recommendations across Bengaluru.
                 </p>
 
                 <div className="selection-stack">
