@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 .vercel
+public/og-image.png
+design/code.html
+design/DESIGN.md
+design/screen.png
