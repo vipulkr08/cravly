@@ -1,6 +1,6 @@
 /**
  * App.jsx — Layout shell only.
- * All state lives in hooks; App just wires them together and renders the right screen.
+ * Coordinates screens: Welcome -> Mood Selection -> Suggestions
  */
 import { useEffect } from 'react';
 import { useAppContext } from './context/AppContext';
@@ -10,6 +10,7 @@ import { useRecommendations } from './hooks/useRecommendations';
 
 import Header from './components/Header';
 import WelcomeScreen from './screens/WelcomeScreen';
+import MoodScreen from './screens/MoodScreen';
 import InputScreen from './screens/InputScreen';
 import SuggestionScreen from './screens/SuggestionScreen';
 
@@ -21,8 +22,15 @@ function App() {
   const { mealTime, setMealTime } = useMealTime();
   const {
     screen,
+    setScreen,
+    selectedMood,
+    setSelectedMood,
+    city,
+    setCity,
     currentDishes,
     handleGetStarted,
+    handleBackToWelcome,
+    handleMoodPicks,
     handleFeedMe,
     handleSurpriseMe,
     handleShuffle,
@@ -33,13 +41,19 @@ function App() {
   // Handle browser back button
   useEffect(() => {
     const onPopState = (e) => {
-      if (!e.state || e.state.screen !== 'suggestion') handleBack();
+      if (!e.state || e.state.screen === 'welcome') {
+        handleBackToWelcome();
+      } else if (e.state.screen === 'mood') {
+        setScreen('mood');
+      } else if (e.state.screen !== 'suggestion') {
+        handleBack();
+      }
     };
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
-  }, [handleBack]);
+  }, [handleBack, handleBackToWelcome, setScreen]);
 
-  // ── Welcome ──────────────────────────────────────────────────────────────
+  // ── Welcome Screen ────────────────────────────────────────────────────────
   if (screen === 'welcome') {
     return (
       <WelcomeScreen
@@ -49,7 +63,25 @@ function App() {
     );
   }
 
-  // ── Main App Shell ────────────────────────────────────────────────────────
+  // ── Mood Selection Screen ─────────────────────────────────────────────────
+  if (screen === 'mood') {
+    return (
+      <MoodScreen
+        selectedMood={selectedMood}
+        onSelectMood={setSelectedMood}
+        onShowPicks={handleMoodPicks}
+        onLogoClick={handleBackToWelcome}
+        mode={mode}
+        onToggleMode={setMode}
+        city={city}
+        onChangeCity={setCity}
+        dietType={dietType}
+        onChangeDiet={setDietType}
+      />
+    );
+  }
+
+  // ── Main App Shell (Suggestions & legacy input) ───────────────────────────
   return (
     <div className="app">
       <Header

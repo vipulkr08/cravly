@@ -13,6 +13,26 @@ function SuggestionScreen({ dish, suggestions, mode, onBack, onShuffle, onSelect
     return (
         <div className="result-screen-minimal animate-in">
             <main>
+                <div style={{ marginBottom: '16px' }}>
+                    <button
+                        onClick={onBack}
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            color: 'var(--text-muted, #5c6861)',
+                            cursor: 'pointer',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            fontSize: '0.9rem',
+                            fontWeight: 600,
+                            padding: '4px 0'
+                        }}
+                    >
+                        ← Back to Mood
+                    </button>
+                </div>
+
                 <div className="dish-card-minimal">
                     <span className="dish-label-minimal">{mode === 'order' ? 'Featured Selection' : 'Editor\'s Choice'}</span>
                     <h1 className="dish-title-minimal">

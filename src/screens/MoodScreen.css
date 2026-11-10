@@ -1,0 +1,474 @@
+/* ============================================
+   MoodScreen — Cravly
+   Select mood of the food matching mobile UI
+   ============================================ */
+
+.mood-screen-wrapper {
+  min-height: 100dvh;
+  background-color: #ede9e0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+}
+
+@media (min-width: 600px) {
+  .mood-screen-wrapper {
+    padding: 24px 16px;
+  }
+}
+
+.mood-screen {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  background-color: #faf6ee;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px 16px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 600px) {
+  .mood-screen {
+    border-radius: 36px;
+    min-height: calc(100dvh - 48px);
+    overflow: hidden;
+  }
+}
+
+/* ---- Top Header ---- */
+.mood-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.mood-logo-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.mood-logo {
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 850;
+  color: #163929;
+  letter-spacing: -0.03em;
+}
+
+.mood-logo-dot {
+  color: #d94b38;
+}
+
+.mood-location-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #dcece4;
+  color: #163929;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.mood-location-pill:hover {
+  background-color: #cfe5d9;
+  transform: translateY(-1px);
+}
+
+.mood-pin-icon {
+  flex-shrink: 0;
+  stroke: #163929;
+}
+
+/* ---- Hero Section ---- */
+.mood-hero {
+  width: 100%;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.mood-title {
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  font-size: 2.15rem;
+  font-weight: 800;
+  line-height: 1.12;
+  color: #163929;
+  letter-spacing: -0.03em;
+  margin: 0 0 10px 0;
+}
+
+.mood-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #5c6861;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* ---- 2x3 Grid of Mood Cards ---- */
+.mood-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.mood-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 26px;
+  padding: 16px 16px 18px;
+  min-height: 146px;
+  border: 2.5px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  user-select: none;
+  box-sizing: border-box;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.18s ease,
+              border-color 0.18s ease;
+}
+
+.mood-card:hover {
+  transform: translateY(-2px);
+}
+
+.mood-card:active {
+  transform: scale(0.97);
+}
+
+.mood-card--selected {
+  border-color: #163929 !important;
+  box-shadow: 0 6px 20px rgba(22, 57, 41, 0.12);
+}
+
+/* Top area inside card */
+.mood-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.mood-card-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mood-card-check-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #163929;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  animation: popIn 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Bottom area inside card */
+.mood-card-bottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.mood-card-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 1.18rem;
+  font-weight: 750;
+  color: #163929;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+}
+
+.mood-card-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 450;
+  color: #5c6861;
+  line-height: 1.3;
+}
+
+/* ---- Primary CTA Button ---- */
+.mood-cta-container {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 18px;
+}
+
+.mood-primary-btn {
+  width: 100%;
+  height: 56px;
+  background-color: #163929;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(22, 57, 41, 0.22);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.mood-primary-btn:hover {
+  background-color: #123022;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(22, 57, 41, 0.3);
+}
+
+.mood-primary-btn:active {
+  transform: scale(0.98);
+}
+
+.mood-btn-arrow {
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.mood-primary-btn:hover .mood-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ---- Bottom Navigation Bar ---- */
+.mood-bottom-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 4px 4px;
+  box-sizing: border-box;
+}
+
+.mood-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #718077;
+  transition: color 0.15s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.mood-nav-item:hover {
+  color: #163929;
+}
+
+.mood-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.mood-nav-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.mood-nav-item--active {
+  color: #163929 !important;
+}
+
+.mood-nav-item--active .mood-nav-label {
+  font-weight: 700;
+}
+
+/* ---- Modal / Bottom Sheet ---- */
+.mood-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mood-modal-sheet {
+  width: 100%;
+  max-width: 430px;
+  background: #faf6ee;
+  border-radius: 28px 28px 0 0;
+  padding: 24px;
+  box-sizing: border-box;
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.mood-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mood-modal-header h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #163929;
+  margin: 0;
+}
+
+.mood-modal-close {
+  background: rgba(0, 0, 0, 0.06);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
+  color: #5c6861;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mood-city-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mood-city-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 1.5px solid #ece7dc;
+  border-radius: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #163929;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mood-city-item:hover {
+  border-color: #163929;
+  background: #fdfbf7;
+}
+
+.mood-city-item--active {
+  border-color: #163929;
+  background: #dcece4;
+  color: #163929;
+}
+
+.mood-city-check {
+  font-weight: 700;
+  color: #163929;
+}
+
+.mood-modal-content {
+  text-align: left;
+}
+
+.mood-modal-empty {
+  font-family: 'Inter', sans-serif;
+  color: #5c6861;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.mood-pref-label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #5c6861;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.mood-pref-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mood-pref-pill {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1.5px solid #e2ddd2;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #5c6861;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mood-pref-pill.active {
+  background: #163929;
+  color: #ffffff;
+  border-color: #163929;
+}

@@ -128,7 +128,7 @@ export function getMultipleRecommendations(dietType, mode, mealTime = null, coun
             const m = d[mt];
             if (!m) return [];
             return m[md] || [];
-        } catch (e) {
+        } catch {
             return [];
         }
     };
@@ -169,7 +169,7 @@ export function getMultipleRecommendations(dietType, mode, mealTime = null, coun
                         });
                     });
                 }
-            } catch (e) { }
+            } catch { return; }
         };
 
         if (dietType === 'egg') {
@@ -228,4 +228,38 @@ export function getZomatoUrl(searchTerm) {
 export function getYouTubeUrl(searchTerm) {
     const encoded = encodeURIComponent(searchTerm);
     return `https://www.youtube.com/results?search_query=${encoded}`;
+}
+
+
+const MOOD_KEYWORDS = {
+    cosy: ['pongal', 'khichdi', 'stew', 'soup', 'ghee', 'appam', 'pasta', 'warm', 'comfort', 'curd', 'dal', 'upma', 'idli', 'dosa', 'paratha', 'sandwich'],
+    hungry: ['thali', 'biryani', 'chole', 'bhature', 'fried rice', 'dosa', 'sizzler', 'curry', 'pulav', 'paratha', 'roti', 'combo', 'paneer'],
+    fresh: ['fruit', 'salad', 'poha', 'lemon rice', 'besan', 'cheela', 'oats', 'steamed', 'light', 'clean', 'idli', 'pesto', 'curd rice'],
+    adventurous: ['risotto', 'sizzler', 'manchurian', 'pani puri', 'shawarma', 'tacos', 'ramen', 'fusion', 'khao soi', 'arrabbiata', 'pav bhaji', 'gobi'],
+    lazy: ['bread', 'curd rice', 'maggi', 'noodles', 'vada pav', 'sandwich', 'poha', 'upma', 'quick', 'bhurji', 'oats'],
+    celebrating: ['sizzler', 'tikka', 'biryani', 'feast', 'chole bhature', 'dessert', 'thali', 'butter', 'special', 'platter', 'risotto']
+};
+
+/**
+ * Get recommendations tailored for a specific mood
+ */
+export function getRecommendationsForMood(mood = 'cosy', dietType = 'veg', mode = 'order', mealTime = null, count = 3) {
+    const allDishes = getMultipleRecommendations(dietType, mode, mealTime, 12);
+    const keywords = MOOD_KEYWORDS[mood] || MOOD_KEYWORDS.cosy;
+
+    const scored = allDishes.map(dish => {
+        const text = `${dish.name} ${dish.description} ${dish.why}`.toLowerCase();
+        let score = 0;
+        keywords.forEach(kw => {
+            if (text.includes(kw.toLowerCase())) score += 2;
+        });
+        return { dish, score };
+    });
+
+    scored.sort((a, b) => (b.score + Math.random()) - (a.score + Math.random()));
+
+    return scored.slice(0, count).map(s => ({
+        ...s.dish,
+        mood
+    }));
 }
