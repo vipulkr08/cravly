@@ -138,6 +138,22 @@ export function getMultipleRecommendations(dietType, mode, mealTime = null, coun
         const vegPool = getDishes('veg', currentMealTime, mode);
         const eggPool = getDishes('egg', currentMealTime, mode);
         candidates = [...vegPool, ...eggPool];
+    } else if (dietType === 'vegan') {
+        const vegPool = getDishes('veg', currentMealTime, mode);
+        const dairyWords = ['paneer', 'ghee', 'curd', 'butter', 'milk', 'cheese', 'malai', 'yogurt'];
+        const veganPool = vegPool.filter(d => {
+            const str = `${d.name} ${d.description} ${d.why}`.toLowerCase();
+            return !dairyWords.some(w => str.includes(w));
+        });
+        candidates = veganPool.length > 0 ? veganPool : vegPool;
+    } else if (dietType === 'jain') {
+        const vegPool = getDishes('veg', currentMealTime, mode);
+        const jainAvoid = ['onion', 'garlic', 'potato', 'aloo', 'pyaaz', 'ginger'];
+        const jainPool = vegPool.filter(d => {
+            const str = `${d.name} ${d.description} ${d.why}`.toLowerCase();
+            return !jainAvoid.some(w => str.includes(w));
+        });
+        candidates = jainPool.length > 0 ? jainPool : vegPool;
     } else {
         candidates = getDishes(dietType, currentMealTime, mode);
     }
@@ -232,7 +248,7 @@ export function getYouTubeUrl(searchTerm) {
 
 
 const MOOD_KEYWORDS = {
-    cosy: ['pongal', 'khichdi', 'stew', 'soup', 'ghee', 'appam', 'pasta', 'warm', 'comfort', 'curd', 'dal', 'upma', 'idli', 'dosa', 'paratha', 'sandwich'],
+    cosy: ['bisi', 'bele', 'bath', 'boondi', 'pongal', 'khichdi', 'stew', 'soup', 'ghee', 'appam', 'pasta', 'warm', 'comfort', 'curd', 'dal', 'upma', 'idli', 'dosa', 'paratha', 'sandwich'],
     hungry: ['thali', 'biryani', 'chole', 'bhature', 'fried rice', 'dosa', 'sizzler', 'curry', 'pulav', 'paratha', 'roti', 'combo', 'paneer'],
     fresh: ['fruit', 'salad', 'poha', 'lemon rice', 'besan', 'cheela', 'oats', 'steamed', 'light', 'clean', 'idli', 'pesto', 'curd rice'],
     adventurous: ['risotto', 'sizzler', 'manchurian', 'pani puri', 'shawarma', 'tacos', 'ramen', 'fusion', 'khao soi', 'arrabbiata', 'pav bhaji', 'gobi'],
@@ -241,18 +257,50 @@ const MOOD_KEYWORDS = {
 };
 
 /**
- * Get recommendations tailored for a specific mood
+ * Get recommendations tailored for a specific mood and optional quick taps filters
  */
-export function getRecommendationsForMood(mood = 'cosy', dietType = 'veg', mode = 'order', mealTime = null, count = 3) {
-    const allDishes = getMultipleRecommendations(dietType, mode, mealTime, 12);
+export function getRecommendationsForMood(
+    mood = 'cosy',
+    dietType = 'veg',
+    mode = 'order',
+    mealTime = null,
+    count = 3,
+    options = {}
+) {
+    const allDishes = getMultipleRecommendations(dietType, mode, mealTime, 16);
     const keywords = MOOD_KEYWORDS[mood] || MOOD_KEYWORDS.cosy;
+    const { hunger, time } = options || {};
 
     const scored = allDishes.map(dish => {
         const text = `${dish.name} ${dish.description} ${dish.why}`.toLowerCase();
         let score = 0;
+
+        // Mood keywords match
         keywords.forEach(kw => {
             if (text.includes(kw.toLowerCase())) score += 2;
         });
+
+        // Time filter scoring
+        if (time === '20') {
+            const minutes = parseInt(dish.time, 10);
+            if (!isNaN(minutes) && minutes <= 20) score += 3;
+        } else if (time === '45') {
+            const minutes = parseInt(dish.time, 10);
+            if (!isNaN(minutes) && minutes <= 45) score += 1.5;
+        }
+
+        // Hunger filter scoring
+        if (hunger === 'peckish') {
+            const kcal = parseInt(dish.calories, 10);
+            if (!isNaN(kcal) && kcal <= 350) score += 3;
+        } else if (hunger === 'starving') {
+            const kcal = parseInt(dish.calories, 10);
+            if (!isNaN(kcal) && kcal >= 450) score += 3;
+            if (text.includes('thali') || text.includes('biryani') || text.includes('sizzler') || text.includes('combo')) {
+                score += 3;
+            }
+        }
+
         return { dish, score };
     });
 
