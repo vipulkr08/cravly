@@ -1,0 +1,560 @@
+/* ============================================
+   SuggestionScreen (Match Screen) — Cravly
+   Pixel-perfect implementation of the match page
+   ============================================ */
+
+.suggestion-screen-wrapper {
+  min-height: 100dvh;
+  background-color: #ede9e0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .suggestion-screen-wrapper {
+    padding: 24px 16px;
+  }
+}
+
+.suggestion-screen {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  background-color: #faf6ee;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px 32px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 600px) {
+  .suggestion-screen {
+    border-radius: 36px;
+    min-height: calc(100dvh - 48px);
+    overflow: hidden;
+  }
+}
+
+/* ---- Header (Back Arrow + Cravly. Logo) ---- */
+.suggestion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.suggestion-back-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  margin-left: -6px;
+  cursor: pointer;
+  color: #163929;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.15s ease;
+  z-index: 2;
+}
+
+.suggestion-back-btn:hover {
+  background-color: rgba(22, 57, 41, 0.08);
+}
+
+.suggestion-logo-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suggestion-logo {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #163929;
+  letter-spacing: -0.02em;
+}
+
+.suggestion-logo-dot {
+  color: #d94b38;
+}
+
+.suggestion-header-spacer {
+  width: 32px;
+  height: 32px;
+}
+
+/* ---- Filter Pills Row ---- */
+.suggestion-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.suggestion-pills-row::-webkit-scrollbar {
+  display: none;
+}
+
+.suggestion-pill {
+  border: none;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.84rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  background-color: #ede7dc;
+  color: #2e3631;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.suggestion-pill:hover {
+  background-color: #e2dcce;
+}
+
+.suggestion-pill.pill-mood {
+  background-color: #e3efe8;
+  color: #163e2d;
+  font-weight: 600;
+}
+
+.suggestion-pill.pill-mood:hover {
+  background-color: #d5e6dc;
+}
+
+/* ---- Match Hero Card ---- */
+.suggestion-card {
+  background-color: #1a3e2f;
+  border-radius: 26px;
+  position: relative;
+  overflow: hidden;
+  padding: 24px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  box-shadow: 0 4px 20px rgba(22, 57, 41, 0.15);
+}
+
+.suggestion-match-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: #f5a623;
+  color: #111827;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.suggestion-avatar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.suggestion-avatar-svg {
+  width: 176px;
+  height: 176px;
+  display: block;
+}
+
+.suggestion-photo-notice {
+  position: absolute;
+  bottom: 14px;
+  right: 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #b3c9bf;
+  letter-spacing: 0.01em;
+}
+
+/* ---- Dish Details ---- */
+.suggestion-details {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion-dish-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #163929;
+  letter-spacing: -0.02em;
+  line-height: 1.22;
+  margin: 0 0 8px 0;
+}
+
+.suggestion-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #4e5852;
+  margin-bottom: 16px;
+}
+
+.diet-mark {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.diet-mark.diet-veg {
+  border: 2px solid #238848;
+}
+
+.diet-mark.diet-veg .diet-mark-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #238848;
+}
+
+.diet-mark.diet-nonveg {
+  border: 2px solid #a4161a;
+}
+
+.diet-mark.diet-nonveg .diet-mark-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #a4161a;
+}
+
+.diet-mark.diet-egg {
+  border: 2px solid #d4881a;
+}
+
+.diet-mark.diet-egg .diet-mark-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #d4881a;
+}
+
+.suggestion-meta-text {
+  color: #4e5852;
+}
+
+/* ---- WHY THIS ONE Block ---- */
+.suggestion-why-card {
+  background-color: #e3ece6;
+  border-radius: 18px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+
+.suggestion-why-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #1d4231;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.suggestion-why-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.45;
+  color: #25392f;
+  margin: 0;
+  font-weight: 450;
+}
+
+/* ---- Primary CTA ---- */
+.suggestion-cta-primary {
+  width: 100%;
+  height: 52px;
+  background-color: #1a3e2f;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(26, 62, 47, 0.2);
+}
+
+.suggestion-cta-primary:hover {
+  background-color: #133224;
+  transform: translateY(-1px);
+}
+
+.suggestion-cta-primary:active {
+  transform: translateY(0);
+}
+
+.suggestion-arrow-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* ---- Secondary Action Row ---- */
+.suggestion-actions-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.suggestion-btn-secondary {
+  flex: 1;
+  height: 48px;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.suggestion-btn-not-for-me {
+  border: 1.6px solid #1a3e2f;
+  color: #163929;
+}
+
+.suggestion-btn-not-for-me:hover {
+  background-color: rgba(26, 62, 47, 0.06);
+}
+
+.suggestion-btn-save {
+  border: 1.6px solid #cfc7b9;
+  color: #163929;
+}
+
+.suggestion-btn-save:hover {
+  border-color: #b8af9f;
+  background-color: rgba(207, 199, 185, 0.12);
+}
+
+.suggestion-btn-save.saved {
+  border-color: #1a3e2f;
+  background-color: #e3efe8;
+  color: #163e2d;
+}
+
+/* ---- Swap Section ---- */
+.suggestion-swap-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion-swap-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #4e5852;
+  margin: 0 0 10px 0;
+}
+
+.suggestion-swap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.suggestion-swap-card {
+  background-color: #ede7dc;
+  border: none;
+  border-radius: 18px;
+  padding: 16px 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.suggestion-swap-card:hover {
+  background-color: #e4ddd0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.suggestion-swap-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #163929;
+  line-height: 1.28;
+  margin: 0 0 6px 0;
+}
+
+.suggestion-swap-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: #5c6660;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* ---- Provider Modal / Action Sheet ---- */
+.provider-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@media (min-width: 600px) {
+  .provider-modal-backdrop {
+    align-items: center;
+  }
+}
+
+.provider-modal-card {
+  background-color: #faf6ee;
+  width: 100%;
+  max-width: 430px;
+  border-radius: 24px 24px 0 0;
+  padding: 24px 20px 28px;
+  box-sizing: border-box;
+  animation: slideUp 0.25s ease;
+}
+
+@media (min-width: 600px) {
+  .provider-modal-card {
+    border-radius: 28px;
+  }
+}
+
+.provider-modal-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #163929;
+  margin: 0 0 6px 0;
+}
+
+.provider-modal-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: #5c6660;
+  margin: 0 0 18px 0;
+}
+
+.provider-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.provider-option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1.5px solid #ded7cb;
+  background-color: #ffffff;
+  color: #163929;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.provider-option-btn:hover {
+  border-color: #1a3e2f;
+  background-color: #f5f9f6;
+}
+
+.provider-modal-cancel {
+  width: 100%;
+  padding: 12px;
+  background: none;
+  border: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #5c6660;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Toast message */
+.suggestion-toast {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #163929;
+  color: #faf6ee;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  white-space: nowrap;
+  animation: fadeIn 0.2s ease;
+}
