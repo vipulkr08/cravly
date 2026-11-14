@@ -1,0 +1,439 @@
+/* ============================================
+   CookOrOrderScreen — Cravly
+   Pixel-perfect implementation of "Order in / Cook it" page
+   ============================================ */
+
+.cook-order-screen-wrapper {
+  min-height: 100dvh;
+  background-color: #ede9e0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .cook-order-screen-wrapper {
+    padding: 24px 16px;
+  }
+}
+
+.cook-order-screen {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  background-color: #fbf7ee;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px 32px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 600px) {
+  .cook-order-screen {
+    border-radius: 36px;
+    min-height: calc(100dvh - 48px);
+    overflow: hidden;
+  }
+}
+
+/* Animations */
+.animate-in {
+  animation: cookOrderFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cookOrderFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Top Navigation Bar (Back & Bookmark) ---- */
+.cook-order-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.cook-order-icon-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  color: #183d2c;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.cook-order-back-btn {
+  margin-left: -6px;
+}
+
+.cook-order-bookmark-btn {
+  margin-right: -6px;
+}
+
+.cook-order-icon-btn:hover {
+  background-color: rgba(24, 61, 44, 0.08);
+}
+
+.cook-order-icon-btn:active {
+  transform: scale(0.92);
+}
+
+/* ---- Dish Summary Header ---- */
+.cook-order-dish-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cook-order-avatar-container {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cook-order-avatar-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cook-order-dish-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.cook-order-dish-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #183d2c;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.cook-order-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Veg / Non-veg indicator */
+.cook-order-diet-mark {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cook-order-diet-veg {
+  border: 1.8px solid #277443;
+}
+
+.cook-order-diet-veg .cook-order-diet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #277443;
+}
+
+.cook-order-diet-nonveg {
+  border: 1.8px solid #cc3333;
+}
+
+.cook-order-diet-nonveg .cook-order-diet-dot {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 7px solid #cc3333;
+}
+
+.cook-order-diet-egg {
+  border: 1.8px solid #d48806;
+}
+
+.cook-order-diet-egg .cook-order-diet-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #d48806;
+}
+
+.cook-order-meta-text {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #455a4f;
+  line-height: 1.2;
+}
+
+/* ---- Segmented Control Tabs (Order in | Cook it) ---- */
+.cook-order-tabs-container {
+  display: flex;
+  background-color: #ece5d8;
+  border-radius: 9999px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 28px;
+  height: 54px;
+  box-sizing: border-box;
+}
+
+.cook-order-tab-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  border-radius: 9999px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #183d2c;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.cook-order-tab-btn.active {
+  background-color: #183d2c;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(24, 61, 44, 0.18);
+}
+
+.cook-order-tab-btn:hover:not(.active) {
+  color: #0e271c;
+  background-color: rgba(24, 61, 44, 0.04);
+}
+
+/* ---- Section Heading ---- */
+.cook-order-section-title {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #183d2c;
+  margin: 0 0 14px 2px;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Delivery App Cards ---- */
+.cook-order-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.cook-order-app-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 1.5px solid #ebe4d6;
+  border-radius: 22px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: left;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cook-order-app-card:hover {
+  border-color: #183d2c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(24, 61, 44, 0.08);
+}
+
+.cook-order-app-card:active {
+  transform: scale(0.99);
+}
+
+.cook-order-app-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cook-order-app-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background-color: #e2ece6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cook-order-app-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cook-order-app-name {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #183d2c;
+  line-height: 1.2;
+}
+
+.cook-order-app-sub {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #607065;
+  line-height: 1.2;
+}
+
+.cook-order-app-arrow {
+  color: #183d2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 8px;
+  transition: transform 0.15s ease;
+}
+
+.cook-order-app-card:hover .cook-order-app-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* ---- Callout Card: SEARCH FOR ---- */
+.cook-order-search-card {
+  background-color: #f3dfc4;
+  border-radius: 20px;
+  padding: 18px 20px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.cook-order-search-label {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #79664f;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.cook-order-search-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cook-order-search-term {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #183d2c;
+  line-height: 1.25;
+}
+
+.cook-order-copy-btn {
+  background: transparent;
+  border: 1.5px solid #183d2c;
+  border-radius: 9999px;
+  color: #183d2c;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 22px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.cook-order-copy-btn:hover {
+  background-color: rgba(24, 61, 44, 0.08);
+}
+
+.cook-order-copy-btn:active {
+  transform: scale(0.95);
+}
+
+.cook-order-copy-btn.copied {
+  background-color: #183d2c;
+  color: #ffffff;
+}
+
+/* ---- Footer Note ---- */
+.cook-order-footer {
+  margin-top: auto;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.cook-order-footer-text {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #6f7e75;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 290px;
+}
+
+/* ---- Toast Notification ---- */
+.cook-order-toast {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #183d2c;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  animation: cookOrderToastIn 0.25s ease-out forwards;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+@keyframes cookOrderToastIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

@@ -11,8 +11,11 @@ import { useRecommendations } from './hooks/useRecommendations';
 import Header from './components/Header';
 import WelcomeScreen from './screens/WelcomeScreen';
 import MoodScreen from './screens/MoodScreen';
+import PreferencesScreen from './screens/PreferencesScreen';
+import FindingScreen from './screens/FindingScreen';
 import InputScreen from './screens/InputScreen';
 import SuggestionScreen from './screens/SuggestionScreen';
+import CookOrOrderScreen from './screens/CookOrOrderScreen';
 
 import './App.css';
 
@@ -28,13 +31,19 @@ function App() {
     city,
     setCity,
     currentDishes,
+    lastFilters,
     handleGetStarted,
     handleBackToWelcome,
     handleMoodPicks,
+    handleMatchMeal,
+    handleCompleteFinding,
+    handleBackToMood,
     handleFeedMe,
     handleSurpriseMe,
     handleShuffle,
     handleSelect,
+    handleCookOrOrder,
+    handleBackToSuggestion,
     handleBack,
   } = useRecommendations({ dietType, setDietType, mode, setMode, mealTime, setMealTime });
 
@@ -45,7 +54,15 @@ function App() {
         handleBackToWelcome();
       } else if (e.state.screen === 'mood') {
         setScreen('mood');
-      } else if (e.state.screen !== 'suggestion') {
+      } else if (e.state.screen === 'preferences' || e.state.screen === 'input') {
+        setScreen('preferences');
+      } else if (e.state.screen === 'finding') {
+        setScreen('finding');
+      } else if (e.state.screen === 'suggestion') {
+        setScreen('suggestion');
+      } else if (e.state.screen === 'cook-or-order') {
+        setScreen('cook-or-order');
+      } else {
         handleBack();
       }
     };
@@ -63,7 +80,7 @@ function App() {
     );
   }
 
-  // ── Mood Selection Screen ─────────────────────────────────────────────────
+  // ── Mood Selection Screen (Step 1) ────────────────────────────────────────
   if (screen === 'mood') {
     return (
       <MoodScreen
@@ -81,7 +98,63 @@ function App() {
     );
   }
 
-  // ── Main App Shell (Suggestions & legacy input) ───────────────────────────
+  // ── Quick Taps / Preferences Screen (Step 2 of 3) ─────────────────────────
+  if (screen === 'preferences' || screen === 'input') {
+    return (
+      <PreferencesScreen
+        selectedMood={selectedMood}
+        initialMode={mode}
+        initialDiet={dietType}
+        onBack={handleBackToMood}
+        onMatchMeal={handleMatchMeal}
+      />
+    );
+  }
+
+  // ── Finding / Matching Screen (Step 3 of 3) ───────────────────────────────
+  if (screen === 'finding') {
+    return (
+      <FindingScreen
+        selectedMood={selectedMood}
+        onComplete={handleCompleteFinding}
+        onLogoClick={handleBackToWelcome}
+      />
+    );
+  }
+
+  // ── Match / Suggestion Screen ─────────────────────────────────────────────
+  if (screen === 'suggestion') {
+    return (
+      <SuggestionScreen
+        dish={currentDishes[0]}
+        suggestions={currentDishes}
+        selectedMood={selectedMood}
+        dietType={dietType}
+        mode={mode}
+        budget={lastFilters?.budget}
+        onBack={handleBack}
+        onLogoClick={handleBackToWelcome}
+        onShuffle={handleShuffle}
+        onSelect={handleSelect}
+        onOrderOrCook={handleCookOrOrder}
+      />
+    );
+  }
+
+  // ── Cook or Order Screen ──────────────────────────────────────────────────
+  if (screen === 'cook-or-order' || screen === 'order-or-cook') {
+    return (
+      <CookOrOrderScreen
+        dish={currentDishes[0]}
+        selectedMood={selectedMood}
+        dietType={dietType}
+        initialMode={mode}
+        onBack={handleBackToSuggestion}
+      />
+    );
+  }
+
+  // ── Fallback App Shell (Legacy input) ─────────────────────────────────────
   return (
     <div className="app">
       <Header
@@ -101,17 +174,6 @@ function App() {
             mealTime={mealTime}
             setMealTime={setMealTime}
             onFeedMe={handleFeedMe}
-          />
-        )}
-
-        {screen === 'suggestion' && (
-          <SuggestionScreen
-            dish={currentDishes[0]}
-            suggestions={currentDishes}
-            mode={mode}
-            onBack={handleBack}
-            onShuffle={handleShuffle}
-            onSelect={handleSelect}
           />
         )}
       </div>
