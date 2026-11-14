@@ -1,0 +1,382 @@
+/* ============================================
+   PreferencesScreen (Step 2 of 3) — Cravly
+   Pixel-perfect match for the design spec
+   ============================================ */
+
+.preferences-screen-wrapper {
+  min-height: 100dvh;
+  background-color: #ede9e0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+}
+
+@media (min-width: 600px) {
+  .preferences-screen-wrapper {
+    padding: 24px 16px;
+  }
+}
+
+.preferences-screen {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  background-color: #faf6ee;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 24px;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 600px) {
+  .preferences-screen {
+    border-radius: 36px;
+    min-height: calc(100dvh - 48px);
+    overflow: hidden;
+  }
+}
+
+/* ---- Top Header (Back arrow + Step indicator) ---- */
+.preferences-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.preferences-back-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  margin-left: -4px;
+  cursor: pointer;
+  color: #163929;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.preferences-back-btn:hover {
+  background-color: #eae5d9;
+  transform: translateX(-2px);
+}
+
+.preferences-back-btn:active {
+  transform: scale(0.92);
+}
+
+.preferences-step-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #55675c;
+  letter-spacing: -0.01em;
+}
+
+/* ---- 3-Segment Progress Bar ---- */
+.preferences-progress-bar {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.preferences-progress-segment {
+  flex: 1;
+  height: 3.5px;
+  border-radius: 2px;
+  background-color: #ddd6c6;
+  transition: background-color 0.25s ease;
+}
+
+.preferences-progress-segment.active {
+  background-color: #163929;
+}
+
+/* ---- Main Headline ---- */
+.preferences-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #163929;
+  letter-spacing: -0.03em;
+  margin: 0 0 22px 0;
+}
+
+/* ---- Section Blocks ---- */
+.preferences-section {
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.preferences-section-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #163929;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Order vs Cook Cards ---- */
+.mode-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.mode-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 15px 14px 16px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-color: #ede9dc;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  position: relative;
+  user-select: none;
+}
+
+.mode-card:hover {
+  transform: translateY(-1px);
+}
+
+.mode-card:active {
+  transform: scale(0.98);
+}
+
+.mode-card.selected {
+  border-color: #163929;
+  background-color: #faf6ee;
+}
+
+.mode-card-icon {
+  margin-bottom: 8px;
+  color: #163929;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode-card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #163929;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.mode-card-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #55675c;
+  line-height: 1.35;
+}
+
+/* ---- Pill Buttons (Chips) ---- */
+.pills-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.pref-pill {
+  background-color: #ede9dc;
+  color: #163929;
+  border: none;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pref-pill:hover {
+  background-color: #e3ded0;
+}
+
+.pref-pill:active {
+  transform: scale(0.96);
+}
+
+.pref-pill.selected {
+  background-color: #163929;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.pref-pill.selected:hover {
+  background-color: #123023;
+}
+
+/* ---- Budget Section & Dual Range Slider ---- */
+.budget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.budget-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #163929;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.budget-value {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #163929;
+  letter-spacing: -0.01em;
+}
+
+.range-slider-container {
+  position: relative;
+  width: 100%;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.range-track-bg {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: #ddd6c6;
+  border-radius: 999px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.range-track-active {
+  position: absolute;
+  height: 5px;
+  background-color: #163929;
+  border-radius: 999px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.range-input {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  z-index: 2;
+}
+
+.range-input--above {
+  z-index: 3;
+}
+
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2.5px solid #163929;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: transform 0.1s ease, border-color 0.15s ease;
+}
+
+.range-input::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2.5px solid #163929;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: transform 0.1s ease, border-color 0.15s ease;
+}
+
+.range-input:active::-webkit-slider-thumb {
+  transform: scale(1.12);
+}
+
+.range-input:active::-moz-range-thumb {
+  transform: scale(1.12);
+}
+
+/* ---- Bottom CTA ---- */
+.preferences-cta-container {
+  margin-top: auto;
+  padding-top: 24px;
+  width: 100%;
+}
+
+.preferences-cta-btn {
+  width: 100%;
+  height: 56px;
+  background-color: #163929;
+  border: none;
+  border-radius: 999px;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(22, 57, 41, 0.18);
+}
+
+.preferences-cta-btn:hover {
+  background-color: #123023;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(22, 57, 41, 0.25);
+}
+
+.preferences-cta-btn:active {
+  transform: scale(0.98);
+}
+
+.preferences-cta-arrow {
+  color: #e38927;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
